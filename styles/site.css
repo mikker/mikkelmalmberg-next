@@ -1,0 +1,14 @@
+
+@layer utilities {
+  .font-vulf-sans {
+    font-family: 'Vulf Sans', sans-serif;
+  }
+}
+
+body {
+  @apply min-h-screen text-gray-800 bg-gray-100 lg:text-xl xl:text-2xl font-vulf-sans dark:bg-gray-900 dark:text-gray-300;
+}
+
+.debug, .debug * {
+  outline: 1px solid rgba(255, 0, 0, 0.2) !important;
+}

@@ -1,16 +1,37 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import "./fonts/vulf-sans/all.css";
+
+@tailwind base;
+
+.btn {
+  @apply inline-flex items-center px-6 py-2 font-semibold rounded outline-none appearance-none;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.btn:hover {
+  box-shadow: inset 0 0 0 30em var(--black-05, rgba(0, 0, 0, 0.05));
 }
 
-* {
-  box-sizing: border-box;
+.btn:active {
+  box-shadow: inset 0 0 0 30em var(--black-20, rgba(0, 0, 0, 0.2));
 }
+
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+
+.btn:focus {
+  @apply ring;
+}
+
+.link {
+  @apply text-black underline dark:text-white;
+  text-decoration-style: wavy;
+  text-underline-offset: 0.25em;
+  text-decoration-color: #fcd34d;
+}
+
+.link:hover {
+  text-decoration-style: solid;
+}
+
+@tailwind components;
+@tailwind utilities;
