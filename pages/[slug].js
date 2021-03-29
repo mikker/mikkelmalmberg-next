@@ -1,18 +1,33 @@
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
-import { getPost, getAllPosts } from "../lib/posts";
-import markdown from "../lib/markdown";
+import Buttondown from "../components/Buttondown";
+import { getPost, getAllPosts } from "../src/posts";
+import markdown from "../src/markdown";
 
 export default function PostPage({ post }) {
   return (
     <Layout active="writing" title={post.title}>
-      <div>
-        <article className="mx-auto prose lg:prose-lg lg:max-w-2xl">
+      <div className='mx-auto lg:max-w-2xl xl:max-w-4xl '>
+        <article className="prose xl:prose-2xl lg:prose-lg dark:prose-light">
           <header>
             <h1>{post.title}</h1>
           </header>
           <div dangerouslySetInnerHTML={{ __html: post.content }} />
         </article>
+
+        <div className="h-12"></div>
+
+        <div className="p-3 leading-relaxed text-center rounded-xl bg-gradient-to-tr from-gold-500 to-gold-400 lg:p-16">
+          <h3 className="font-bold xl:text-4xl">
+            Join my mailing list
+          </h3>
+          <div className="h-4"></div>
+          <p className="xl:text-2xl">
+            Receive a note when I publish new writings on <strong>building, shaping and running small-to-medium software.</strong>
+          </p>
+          <div className="h-6"></div>
+          <Buttondown list="brainbow" buttonTitle="Subscribe" />
+        </div>
       </div>
     </Layout>
   );

@@ -52,8 +52,8 @@ const MobileNav = ({ active, ...props }) => {
 
 const DesktopNav = ({ active, className }) => {
   const activeCls =
-    "text-gray-800 bg-black btn dark:bg-gray-100 dark:text-gray-300 bg-opacity-5";
-  const normieCls = "btn font-normal";
+    "text-gray-800 bg-black xl:px-10 btn dark:bg-gray-800 dark:text-gray-300 bg-opacity-5 dark:bg-opacity-90";
+  const normieCls = "btn xl:px-10 font-normal dark:bg-gray-700";
 
   return (
     <div className={cn("justify-center space-x-2", className)}>
@@ -86,12 +86,12 @@ export default function Layout({ active, title, children }) {
       </Head>
 
       <nav className="fixed top-0 left-0 right-0 z-10 shadow-sm">
-        <div className="z-0 p-2 text-base">
+        <div className="z-0 p-2 text-xl">
           <MobileNav active={active} className="lg:hidden" />
           <DesktopNav active={active} className="hidden lg:flex" />
         </div>
         <div
-          className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-50"
+          className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-50 dark:bg-opacity-10"
           style={{ WebkitBackdropFilter: "blur(20px)", zIndex: "-1" }}
         />
       </nav>

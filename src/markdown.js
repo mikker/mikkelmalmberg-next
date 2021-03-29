@@ -29,31 +29,3 @@ const md = mdit({
 export default async function markdown(markdown) {
   return md.render(markdown);
 }
-
-// import marked from 'marked'
-
-// export default async function markdown(markdown) {
-//   return marked(markdown, {
-//     sanitize: false,
-//     smartypants: true,
-
-//   })
-// }
-
-// import remark from "remark";
-// import html from "remark-html";
-// import images from "remark-images";
-// import smarty from "@silvenon/remark-smartypants";
-// import externalLinks from "remark-external-links";
-// import numberedFootnotes from "remark-numbered-footnotes";
-
-// export default async function markdown(markdown) {
-//   const result = await remark()
-//     .use(images)
-//     .use(html)
-//     .use(externalLinks)
-//     .use(smarty)
-//     .use(numberedFootnotes)
-//     .process(markdown);
-//   return result.toString();
-// }

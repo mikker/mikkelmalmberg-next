@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import Link from "next/link";
-import { getAllIssuesByYear } from "../lib/issues";
-import { getAllPosts } from "../lib/posts";
+import { getAllIssuesByYear } from "../src/issues";
+import { getAllPosts } from "../src/posts";
 
 export default function WritingPage({ issuesByYear, postsByDate }) {
   return (
