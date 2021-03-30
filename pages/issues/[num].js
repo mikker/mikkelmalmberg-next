@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 import Layout from "../../components/Layout";
 import Buttondown from "../../components/Buttondown";
 import { getIssue, getAllIssues } from "../../src/issues";
@@ -6,8 +7,14 @@ import markdown from "../../src/markdown";
 
 export default function IssuePage({ issue }) {
   return (
-    <Layout active='writing' title={issue.title}>
-      <div className='mx-auto lg:max-w-2xl xl:max-w-3xl '>
+    <Layout active="writing" title={issue.title}>
+      <div className="m-3 lg:mx-auto lg:max-w-2xl xl:max-w-3xl ">
+        <p className="mb-3 lg:mb-10">
+          <Link href="/writing">
+            <a className="link">&larr; Udgaver</a>
+          </Link>
+        </p>
+
         <article
           className="prose xl:prose-xl lg:prose-lg dark:prose-light"
           dangerouslySetInnerHTML={{ __html: issue.content }}
@@ -15,13 +22,13 @@ export default function IssuePage({ issue }) {
 
         <div className="h-12"></div>
 
-        <div className="p-3 leading-relaxed text-center rounded-xl bg-gradient-to-tr from-gold-500 to-gold-400 lg:p-12">
-          <h3 className="text-3xl font-bold">
-            Kunne du lide, hvad du læste?
-          </h3>
+        <div className="p-3 leading-relaxed text-center rounded-xl bg-gradient-to-tr from-gold-500 to-gold-400 lg:p-16">
+          <h3 className="font-bold xl:text-4xl">Kunne du lide, hvad du læste?</h3>
           <div className="h-4"></div>
-          <p className="text-xl">
-            Modtag et mindst lige så lækkert brev<br /><del>hver fredag</del> (langt fra) <strong>hver uge</strong>:
+          <p className="xl:text-2xl">
+            Modtag et mindst lige så lækkert brev
+            <br />
+            <del>hver fredag</del> (langt fra) <strong>hver uge</strong>:
           </p>
           <div className="h-6"></div>
           <Buttondown list="computers" />

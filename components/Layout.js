@@ -29,12 +29,6 @@ const MobileNav = ({ active, ...props }) => {
             <a className={active === "about" ? activeCls : normieCls}>About</a>
           </Link>
 
-          <Link href="/projects">
-            <a className={active === "projects" ? activeCls : normieCls}>
-              Projects
-            </a>
-          </Link>
-
           <Link href="/writing">
             <a className={active === "writing" ? activeCls : normieCls}>
               Writing
@@ -59,12 +53,6 @@ const DesktopNav = ({ active, className }) => {
     <div className={cn("justify-center space-x-2", className)}>
       <Link href="/">
         <a className={active === "about" ? activeCls : normieCls}>About</a>
-      </Link>
-
-      <Link href="/projects">
-        <a className={active === "projects" ? activeCls : normieCls}>
-          Projects
-        </a>
       </Link>
 
       <Link href="/writing">

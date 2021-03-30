@@ -1,0 +1,119 @@
+import Layout from "../components/Layout";
+import { useState } from "react";
+import Link from "next/link";
+import prisma from "../src/prisma";
+import { post } from '../src/api'
+import { formatDistance } from "date-fns";
+
+export default function AmaPage({ questions }) {
+  const [body, setBody] = useState("");
+  const [didSubmit, setDidSubmit] = useState(false)
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    let result;
+    try {
+      result = await post("/api/ama/ask", { body });
+    } catch (error) {
+    }
+
+    setBody('')
+    setDidSubmit(true)
+
+    return result;
+  };
+
+  return (
+    <Layout active="ama" title="AMA">
+      <div className="mx-auto max-w-screen-sm">
+        <header className="leading-loose lg:text-3xl">
+          <h1 className="mb-2 font-black lg:text-5xl">Ask Me Anything</h1>
+          <h2 className="text-gray-500">
+            Anything goes! Questions will show up when I add an answer.
+          </h2>
+        </header>
+
+        <div className="h-12"></div>
+
+        <form onSubmit={onSubmit} className='text-base'>
+          <textarea
+            rows={3}
+            className="mb-2 input w-100"
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
+            placeholder="How do you even…"
+          />
+
+          {body !== "" && (
+            <button
+              type="submit"
+              className="text-green-500 border-2 shadow-sm btn"
+            >
+              Ask question
+            </button>
+          )}
+          {didSubmit && <div className='p-3 text-base text-gray-900 bg-gold-300'>
+            <p>Question received! Don't forget to check back later for an answer ✌</p>
+          </div>}
+        </form>
+
+        <div className="h-12"></div>
+
+        {questions.map((question) => (
+          <Question question={question} key={question.id} />
+        ))}
+      </div>
+    </Layout>
+  );
+}
+
+export const getStaticProps = async () => {
+  const questions = await prisma.question.findMany({
+    where: { published: true },
+    include: { answers: {} },
+  });
+  return { props: { questions } };
+};
+
+const Question = ({
+  question: { id, body, answers, upvotes: initialUpvotes, updatedAt },
+}) => {
+  const [upvotes, setUpvotes] = useState(initialUpvotes);
+
+  return (
+    <div className="leading-loose">
+      <h3 className="mb-2 font-semibold">{body}</h3>
+      <ul className="mb-2">
+        {answers.map((answer) => (
+          <Answer answer={answer} key={answer.id} />
+        ))}
+      </ul>
+      <p className="text-gray-500">
+        <button
+          className={`relative px-1 py-0 -ml-1 btn ${
+            upvotes > 0 && "text-red-500"
+          }`}
+          onClick={() => upvote(id).then(setUpvotes)}
+        >
+          &hearts;{upvotes}
+        </button>
+        &nbsp;&middot; {formatDistance(updatedAt, new Date())}
+      </p>
+    </div>
+  );
+};
+
+const Answer = ({ answer: { body } }) => <li>{body}</li>;
+
+const upvote = async (id) => {
+  let result;
+
+  try {
+    result = await post("/api/ama/upvote", { id });
+  } catch (err) {
+    console.error(err);
+  }
+
+  return (result && result.upvotes) || "err";
+};

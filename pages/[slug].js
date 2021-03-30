@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 import Layout from "../components/Layout";
 import Buttondown from "../components/Buttondown";
 import { getPost, getAllPosts } from "../src/posts";
@@ -7,7 +8,13 @@ import markdown from "../src/markdown";
 export default function PostPage({ post }) {
   return (
     <Layout active="writing" title={post.title}>
-      <div className='mx-auto lg:max-w-2xl xl:max-w-4xl '>
+      <div className="m-3 lg:mx-auto lg:max-w-2xl xl:max-w-4xl ">
+        <p className="mb-3 lg:mb-10">
+          <Link href="/writing">
+            <a className="link">&larr; Writing</a>
+          </Link>
+        </p>
+
         <article className="prose xl:prose-2xl lg:prose-lg dark:prose-light">
           <header>
             <h1>{post.title}</h1>
@@ -18,12 +25,13 @@ export default function PostPage({ post }) {
         <div className="h-12"></div>
 
         <div className="p-3 leading-relaxed text-center rounded-xl bg-gradient-to-tr from-gold-500 to-gold-400 lg:p-16">
-          <h3 className="font-bold xl:text-4xl">
-            Join my mailing list
-          </h3>
+          <h3 className="font-bold xl:text-4xl">Join my mailing list</h3>
           <div className="h-4"></div>
           <p className="xl:text-2xl">
-            Receive a note when I publish new writings on <strong>building, shaping and running small-to-medium software.</strong>
+            Receive a note when I publish new writings on{" "}
+            <strong>
+              building, shaping and running small-to-medium software.
+            </strong>
           </p>
           <div className="h-6"></div>
           <Buttondown list="brainbow" buttonTitle="Subscribe" />
