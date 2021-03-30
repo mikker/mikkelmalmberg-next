@@ -8,7 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@prisma/client": "^2.19.0",
+    "@prisma/client": "^2.20.0",
     "@silvenon/remark-smartypants": "^1.0.0",
     "@tailwindcss/jit": "^0.1.17",
     "@tailwindcss/typography": "^0.4.0",
@@ -16,7 +16,6 @@
     "babel-plugin-superjson-next": "^0.2.3",
     "classnames": "^2.2.6",
     "date-fns": "^2.19.0",
-    "firebase-admin": "^9.6.0",
     "gray-matter": "^4.0.2",
     "markdown-it": "^12.0.4",
     "markdown-it-anchor": "^7.1.0",
@@ -28,7 +27,7 @@
     "marked": "^2.0.1",
     "next": "10.1.2",
     "postcss": "^8.2.8",
-    "prisma": "2.19.0",
+    "prisma": "2.20.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-feather": "^2.0.9",
