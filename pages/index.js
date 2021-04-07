@@ -9,7 +9,7 @@ export default function AboutPage() {
   return (
     <Layout active="about" title="Hello, I'm Mikkel Malmberg">
       <div className="p-5 mx-auto lg:max-w-3xl">
-        <article className="mx-auto md:max-w-2xl space-y-4">
+        <article className="mx-auto xl:text-3xl xl:leading-relaxed md:max-w-2xl space-y-4">
           <div className="relative flex justify-center">
             <div className="relative flex-none -mr-20">
               <Image

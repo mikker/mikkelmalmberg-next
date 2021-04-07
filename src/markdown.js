@@ -29,3 +29,7 @@ const md = mdit({
 export default async function markdown(markdown) {
   return md.render(markdown);
 }
+
+export function sync(markdown) {
+  return md.render(markdown);
+}

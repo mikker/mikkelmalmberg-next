@@ -4,6 +4,7 @@ import Link from "next/link";
 import prisma from "../src/prisma";
 import { post } from "../src/api";
 import { formatDistance } from "date-fns";
+import { sync as markdown } from "../src/markdown";
 
 export default function AmaPage({ questions }) {
   const [body, setBody] = useState("");
@@ -27,9 +28,7 @@ export default function AmaPage({ questions }) {
     <Layout active="ama" title="AMA">
       <div className="p-5 mx-auto max-w-screen-sm lg:px-0">
         <header className="">
-          <h1 className="mb-2 font-black">
-            Ask Me Anything
-          </h1>
+          <h1 className="mb-2 font-black">Ask Me Anything</h1>
           <h2 className="text-gray-500">
             Anything goes! Questions will show up when I add an answer.
           </h2>
@@ -119,7 +118,9 @@ const Question = ({
   );
 };
 
-const Answer = ({ answer: { body } }) => <li>{body}</li>;
+const Answer = ({ answer: { body } }) => (
+  <li dangerouslySetInnerHTML={{ __html: markdown(body) }} />
+);
 
 const upvote = async (id) => {
   let result;

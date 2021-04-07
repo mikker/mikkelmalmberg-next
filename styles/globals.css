@@ -48,7 +48,12 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-screen text-base text-black bg-white leading-relaxed lg:text-xl xl:text-2xl dark:bg-black dark:text-gray-200 font-vulf-sans;
+  @apply min-h-screen text-base leading-relaxed text-black bg-white lg:text-xl xl:text-2xl dark:bg-black dark:text-gray-200 font-vulf-sans;
+}
+
+code {
+  color: currentColor;
+  font-size: 80%;
 }
 
 @keyframes spin {
