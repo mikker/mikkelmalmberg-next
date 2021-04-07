@@ -1,6 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
+  mode: "jit",
   purge: ["./pages/**/*.js", "./components/**/*.js"],
   darkMode: "media", // or 'media' or 'class'
   theme: {
@@ -15,6 +16,18 @@ module.exports = {
       },
       colors: {
         gray: colors.trueGray,
+        sunset: {
+          50: "#fcfbf8",
+          100: "#faefe2",
+          200: "#f5d3c5",
+          300: "#ffb3a1",
+          400: "#de7b6a",
+          500: "#cc5948",
+          600: "#b23e31",
+          700: "#8b2f26",
+          800: "#62211b",
+          900: "#3e1510",
+        },
         gold: {
           50: "#FFFDF9",
           100: "#FFFBF3",
@@ -32,9 +45,9 @@ module.exports = {
         light: {
           css: [
             {
-              color: theme("colors.gray.200"),
+              color: theme("colors.white"),
               '[class~="lead"]': {
-                color: theme("colors.gray.300"),
+                color: theme("colors.black"),
               },
               a: {
                 color: theme("colors.white"),
@@ -43,10 +56,10 @@ module.exports = {
                 color: theme("colors.white"),
               },
               "ol > li::before": {
-                color: theme("colors.gray.400"),
+                color: theme("colors.gray.100"),
               },
               "ul > li::before": {
-                backgroundColor: theme("colors.gray.600"),
+                backgroundColor: theme("colors.gray.300"),
               },
               hr: {
                 borderColor: theme("colors.gray.200"),
@@ -92,6 +105,7 @@ module.exports = {
         },
         DEFAULT: {
           css: {
+            color: theme("colors.black"),
             h5: {
               fontWeight: 600,
             },
@@ -102,7 +116,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      typography: ['dark']
+      typography: ["dark"],
     },
   },
   plugins: [require("@tailwindcss/typography")],

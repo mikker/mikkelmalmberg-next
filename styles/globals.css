@@ -17,7 +17,7 @@
 }
 
 .input {
-  @apply block w-full px-3 py-2 leading-normal text-left bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring;
+  @apply block w-full px-3 py-2 leading-normal text-left bg-white border border-gray-300 rounded-lg appearance-none focus:outline-none focus:ring dark:bg-gray-900 dark:border-gray-700;
 }
 
 .link {
@@ -48,9 +48,23 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-screen text-sm text-gray-800 bg-gray-50 lg:text-xl xl:text-2xl dark:bg-gray-900 dark:text-gray-200 font-vulf-sans;
+  @apply min-h-screen text-base text-black bg-white lg:text-xl xl:text-2xl dark:bg-black dark:text-gray-200 font-vulf-sans;
 }
 
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 60s linear infinite
+}
+
+
 :root {
-  --link-color: #fcd34d;
+  --link-color: #ffb3a1;
 }

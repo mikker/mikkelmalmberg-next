@@ -48,7 +48,7 @@ export default function AmaPage({ questions }) {
           {body !== "" && (
             <button
               type="submit"
-              className="text-green-500 border-2 shadow-sm btn"
+              className="text-black bg-gradient-to-br from-gold-500 to-sunset-300 shadow-sm btn"
             >
               Ask question
             </button>
@@ -73,7 +73,10 @@ export const getStaticProps = async () => {
     where: { published: true },
     include: { answers: {} },
   });
-  return { props: { questions } };
+  return {
+    props: { questions },
+    revalidate: 1 // secs
+  };
 };
 
 const Question = ({
