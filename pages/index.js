@@ -8,8 +8,8 @@ import Layout from "../components/Layout";
 export default function AboutPage() {
   return (
     <Layout active="about" title="Hello, I'm Mikkel Malmberg">
-      <div className="mx-auto lg:max-w-3xl">
-        <article className="px-4 mx-auto text-xl leading-relaxed lg:leading-relaxed lg:text-3xl md:max-w-2xl space-y-4">
+      <div className="p-5 mx-auto lg:max-w-3xl">
+        <article className="mx-auto md:max-w-2xl space-y-4">
           <div className="relative flex justify-center">
             <div className="relative flex-none -mr-20">
               <Image
@@ -30,7 +30,7 @@ export default function AboutPage() {
           <div className="lg:h-12"></div>
 
           <h1>
-            <strong>Hello,</strong> I'm Mikkel Malmberg.
+            <strong>Hello,</strong> I'm Mikkel Malmberg
           </h1>
           <p>
             I build{" "}

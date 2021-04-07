@@ -40,7 +40,7 @@ const Buttondown = ({ list, buttonTitle, ...props }) => {
             defaultValue=""
             name="email"
             id="bd-email"
-            className="border-white rounded-none rounded-l-lg input w-100"
+            className="border-white dark:border-black rounded-none rounded-l-lg input w-100"
             placeholder={placeholder}
           />
         </div>

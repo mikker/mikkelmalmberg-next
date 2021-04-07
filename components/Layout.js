@@ -8,7 +8,7 @@ import cn from "classnames";
 const MobileNav = ({ active, ...props }) => {
   const [open, setOpen] = useState(false);
   const activeCls =
-    "text-gray-800 bg-black btn dark:bg-gray-100 dark:text-gray-300 bg-opacity-5";
+    "btn text-black bg-gradient-to-r from-gold-500 to-sunset-300";
   const normieCls = "font-normal btn";
 
   return (

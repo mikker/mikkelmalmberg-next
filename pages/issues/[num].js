@@ -22,10 +22,10 @@ export default function IssuePage({ issue }) {
 
         <div className="h-12"></div>
 
-        <div className="p-3 leading-relaxed text-center rounded-xl bg-gradient-to-tr from-gold-500 to-gold-400 lg:p-16">
-          <h3 className="font-bold xl:text-4xl">Kunne du lide, hvad du læste?</h3>
+        <div className="p-3 text-center rounded-xl bg-gradient-to-tr from-gold-500 to-sunset-300 dark:text-black lg:p-16">
+          <h3 className="font-bold">Kunne du lide, hvad du læste?</h3>
           <div className="h-4"></div>
-          <p className="xl:text-2xl">
+          <p className="">
             Modtag et mindst lige så lækkert brev
             <br />
             <del>hver fredag</del> (langt fra) <strong>hver uge</strong>:

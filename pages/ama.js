@@ -2,12 +2,12 @@ import Layout from "../components/Layout";
 import { useState } from "react";
 import Link from "next/link";
 import prisma from "../src/prisma";
-import { post } from '../src/api'
+import { post } from "../src/api";
 import { formatDistance } from "date-fns";
 
 export default function AmaPage({ questions }) {
   const [body, setBody] = useState("");
-  const [didSubmit, setDidSubmit] = useState(false)
+  const [didSubmit, setDidSubmit] = useState(false);
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -15,28 +15,29 @@ export default function AmaPage({ questions }) {
     let result;
     try {
       result = await post("/api/ama/ask", { body });
-    } catch (error) {
-    }
+    } catch (error) {}
 
-    setBody('')
-    setDidSubmit(true)
+    setBody("");
+    setDidSubmit(true);
 
     return result;
   };
 
   return (
     <Layout active="ama" title="AMA">
-      <div className="mx-auto max-w-screen-sm">
-        <header className="leading-loose lg:text-3xl">
-          <h1 className="mb-2 font-black lg:text-5xl">Ask Me Anything</h1>
+      <div className="p-5 mx-auto max-w-screen-sm lg:px-0">
+        <header className="">
+          <h1 className="mb-2 font-black">
+            Ask Me Anything
+          </h1>
           <h2 className="text-gray-500">
             Anything goes! Questions will show up when I add an answer.
           </h2>
         </header>
 
-        <div className="h-12"></div>
+        <div className="h-3 lg:h-8"></div>
 
-        <form onSubmit={onSubmit} className='text-base'>
+        <form onSubmit={onSubmit} className="">
           <textarea
             rows={3}
             className="mb-2 input w-100"
@@ -53,15 +54,23 @@ export default function AmaPage({ questions }) {
               Ask question
             </button>
           )}
-          {didSubmit && <div className='p-3 text-base text-gray-900 bg-gold-300'>
-            <p>Question received! Don't forget to check back later for an answer ✌</p>
-          </div>}
+          {didSubmit && (
+            <div className="p-3 text-gray-900 bg-gold-300">
+              <p>
+                Question received! Don't forget to check back later for an
+                answer ✌
+              </p>
+            </div>
+          )}
         </form>
 
-        <div className="h-12"></div>
+        <div className="h-6 lg:h-8"></div>
 
         {questions.map((question) => (
-          <Question question={question} key={question.id} />
+          <>
+            <Question question={question} key={question.id} />
+            <div className="h-6 lg:h-12" />
+          </>
         ))}
       </div>
     </Layout>
@@ -75,7 +84,7 @@ export const getStaticProps = async () => {
   });
   return {
     props: { questions },
-    revalidate: 1 // secs
+    revalidate: 1, // secs
   };
 };
 
@@ -85,8 +94,8 @@ const Question = ({
   const [upvotes, setUpvotes] = useState(initialUpvotes);
 
   return (
-    <div className="leading-loose">
-      <h3 className="mb-2 font-semibold">{body}</h3>
+    <div className="">
+      <h3 className="mb-0 font-semibold">{body}</h3>
       <ul className="mb-2">
         {answers.map((answer) => (
           <Answer answer={answer} key={answer.id} />
@@ -97,7 +106,10 @@ const Question = ({
           className={`relative px-1 py-0 -ml-1 btn ${
             upvotes > 0 && "text-red-500"
           }`}
-          onClick={() => upvote(id).then(setUpvotes)}
+          onClick={() => {
+            setUpvotes(upvotes + 1);
+            upvote(id).then(setUpvotes);
+          }}
         >
           &hearts;{upvotes}
         </button>

@@ -8,14 +8,14 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
     <Layout active="writing" title="Writing">
       <div className="max-w-4xl p-5 mx-auto lg:flex lg:space-x-8">
         <div className="lg:w-1/2 flex-0 space-y-3">
-          <h2 className="font-bold lg:text-3xl">POSTS</h2>
-          <p className="text-base">
+          <h2 className="font-bold">POSTS</h2>
+          <p className="">
             <span className="inline-block px-1 text-white bg-blue-500 rounded">
               English
             </span>{" "}
             musings on building software
           </p>
-          <ul className="lg:text-lg">
+          <ul className="text-base">
             {postsByDate.map((post) => (
               <li key={post.slug}>
                 <Link href={`/${post.slug}`}>
@@ -29,8 +29,8 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
         <div className="h-6 lg:hidden"></div>
 
         <div className="lg:w-1/2 flex-0 space-y-3">
-          <h2 className="font-bold lg:text-3xl">COMPUTERS</h2>
-          <p className="text-base">
+          <h2 className="font-bold">COMPUTERS</h2>
+          <p className="">
             {" "}
             <span className="inline-block px-1 text-white bg-red-500 rounded">
               Danish
@@ -48,8 +48,8 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
 
               return (
                 <div key={year}>
-                  <h2 className="font-bold lg:text-lg">{year}</h2>
-                  <ul className="lg:text-lg">
+                  <h2 className="font-bold">{year}</h2>
+                  <ul className="text-base">
                     {sorted.map((issue) => (
                       <li key={issue.issue}>
                         <Link href={`/issues/${issue.issue}`}>

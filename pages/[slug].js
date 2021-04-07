@@ -25,9 +25,9 @@ export default function PostPage({ post }) {
         <div className="h-12"></div>
 
         <div className="p-3 leading-relaxed text-center rounded-xl bg-gradient-to-tr from-gold-500 to-sunset-300 dark:text-black lg:p-16">
-          <h3 className="font-bold xl:text-4xl">Join my mailing list</h3>
+          <h3 className="font-bold">Join my mailing list</h3>
           <div className="h-4"></div>
-          <p className="xl:text-2xl">
+          <p className="">
             Receive a note when I publish new writings on{" "}
             <strong>
               building, shaping and running small-to-medium software.

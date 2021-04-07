@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "vercel",
+    "db:studio": "prisma studio"
   },
   "dependencies": {
     "@prisma/client": "^2.20.1",
