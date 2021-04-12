@@ -65,12 +65,14 @@ export default function AmaPage({ questions }) {
 
         <div className="h-6 lg:h-8"></div>
 
-        {questions.map((question) => (
-          <>
-            <Question question={question} key={question.id} />
-            <div className="h-6 lg:h-12" />
-          </>
-        ))}
+        <div className="leading-relaxed nested-links">
+          {questions.map((question) => (
+            <>
+              <Question question={question} key={question.id} />
+              <div className="mb-8 lg:mb-12" />
+            </>
+          ))}
+        </div>
       </div>
     </Layout>
   );
@@ -93,33 +95,36 @@ const Question = ({
   const [upvotes, setUpvotes] = useState(initialUpvotes);
 
   return (
-    <div className="">
-      <h3 className="mb-0 font-semibold">{body}</h3>
-      <ul className="mb-2">
+    <>
+      <dt className="mb-2 font-bold">{body}</dt>
+      <dd>
         {answers.map((answer) => (
           <Answer answer={answer} key={answer.id} />
         ))}
-      </ul>
-      <p className="text-gray-500">
-        <button
-          className={`relative px-1 py-0 -ml-1 btn ${
-            upvotes > 0 && "text-red-500"
-          }`}
-          onClick={() => {
-            setUpvotes(upvotes + 1);
-            upvote(id).then(setUpvotes);
-          }}
-        >
-          &hearts;{upvotes}
-        </button>
-        &nbsp;&middot; {formatDistance(updatedAt, new Date())}
-      </p>
-    </div>
+        <p className="mt-2 text-gray-500">
+          <button
+            className={`relative px-1 py-0 -ml-1 btn ${
+              upvotes > 0 && "text-red-500"
+            }`}
+            onClick={() => {
+              setUpvotes(upvotes + 1);
+              upvote(id).then(setUpvotes);
+            }}
+          >
+            &hearts;{upvotes}
+          </button>
+          &nbsp;&middot; {formatDistance(updatedAt, new Date())}
+        </p>
+      </dd>
+    </>
   );
 };
 
 const Answer = ({ answer: { body } }) => (
-  <li dangerouslySetInnerHTML={{ __html: markdown(body) }} />
+  <li
+    className="text-gray-700"
+    dangerouslySetInnerHTML={{ __html: markdown(body) }}
+  />
 );
 
 const upvote = async (id) => {
