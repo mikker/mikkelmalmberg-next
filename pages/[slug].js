@@ -10,8 +10,10 @@ export default function PostPage({ post }) {
     <Layout active="writing" title={post.title}>
       <div className="m-3 lg:mx-auto lg:max-w-2xl xl:max-w-4xl ">
         <p className="mb-3 lg:mb-10">
+          <div className="h-8" />
+
           <Link href="/writing">
-            <a className="link">&larr; Writing</a>
+            <a className="text-sm bg-gray-100 btn">&larr; Writing</a>
           </Link>
         </p>
 

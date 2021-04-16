@@ -6,7 +6,7 @@ import { getAllPosts } from "../src/posts";
 export default function WritingPage({ issuesByYear, postsByDate }) {
   return (
     <Layout active="writing" title="Writing">
-      <div className="max-w-4xl p-5 mx-auto lg:flex lg:space-x-8">
+      <div className="p-5 mx-auto max-w-screen-xl lg:flex lg:space-x-8">
         <div className="lg:w-1/2 flex-0 space-y-3">
           <h2 className="font-bold">POSTS</h2>
           <p className="">
@@ -15,7 +15,7 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
             </span>{" "}
             musings on building software
           </p>
-          <ul className="text-base">
+          <ul className="">
             {postsByDate.map((post) => (
               <li key={post.slug}>
                 <Link href={`/${post.slug}`}>
@@ -49,7 +49,7 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
               return (
                 <div key={year}>
                   <h2 className="font-bold">{year}</h2>
-                  <ul className="text-base">
+                  <ul className="">
                     {sorted.map((issue) => (
                       <li key={issue.issue}>
                         <Link href={`/issues/${issue.issue}`}>

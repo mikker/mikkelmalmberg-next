@@ -8,9 +8,9 @@ import Layout from "../components/Layout";
 export default function AboutPage() {
   return (
     <Layout active="about" title="Hello, I'm Mikkel Malmberg">
-      <div className="p-5 mx-auto lg:max-w-3xl">
-        <article className="mx-auto text-xl leading-relaxed lg:leading-relaxed lg:text-3xl space-y-4">
-          <div className="relative flex justify-center">
+      <div className="px-5">
+        <article className="mx-auto leading-relaxed tracking-tighter uppercase text-xl md:text-4xl md:leading-relaxed lg:leading-tight lg:font-light lg:text-7xl xl:text-9xl max-w-screen-2xl">
+          <div className="relative flex justify-center lg:float-right right-5">
             <div className="relative flex-none -mr-20">
               <Image
                 src="/mikker-2019-white.png"
@@ -27,15 +27,15 @@ export default function AboutPage() {
             </a>
           </div>
 
-          <div className="lg:h-12"></div>
+          <div className="h-8 lg:h-0"></div>
 
-          <h1>
-            <strong>Hello,</strong> I'm Mikkel Malmberg
+          <h1 className=''>
+            <strong>Hello,</strong> I'm Mikkel.{' '}
           </h1>
-          <p>
-            I build{" "}
+          <p className=''>
+            I'm building{" "}
             <a className="link" href="https://brainbow.studio">
-              products for people
+              platforms for creators
             </a>
             , co-host a{" "}
             <a className="link" href="http://kortsluttet.dk">
@@ -52,6 +52,7 @@ export default function AboutPage() {
             </a>
             .
           </p>
+          <div className="h-8"></div>
           <p>
             I'd much rather spend my time trying than dreaming and I don't mind
             a little bit of chaos.

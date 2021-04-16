@@ -11,7 +11,7 @@ export default function IssuePage({ issue }) {
       <div className="m-3 lg:mx-auto lg:max-w-2xl xl:max-w-3xl ">
         <p className="mb-3 lg:mb-10">
           <Link href="/writing">
-            <a className="link">&larr; Udgaver</a>
+            <a className="text-sm bg-gray-500 bg-opacity-10 dark:bg-opacity-30 btn">&larr; Flere udgaver</a>
           </Link>
         </p>
 

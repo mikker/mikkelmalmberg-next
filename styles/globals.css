@@ -1,4 +1,4 @@
-@import "./fonts/vulf-sans/all.css";
+@import "./fonts/iosevka-aile/iosevka-aile.css";
 
 @layer components {
   .btn {
@@ -22,15 +22,16 @@
   }
 
   .link {
-    @apply text-black underline dark:text-gray-100;
+    @apply font-bold text-transparent md:font-normal bg-gradient-to-r from-blue-400 to-purple-500 dark:from-sunset-300 dark:to-gold-500 bg-clip-text decoration-clone;
+    @apply hover:text-white hover:dark:text-black hover:bg-clip-border hover:bg-gradient-to-r;
 
-    text-underline-offset: 0.1em;
+    text-underline-offset: 0.11em;
     text-decoration-color: var(--link-color, #fcd34d);
-    text-decoration-thickness: .1em;
+    text-decoration-thickness: 4px;
   }
 
-  .link:hover {
-    text-decoration-color: #000;
+  .link:visited {
+    @apply to-black;
   }
 }
 
@@ -41,6 +42,21 @@
 @layer utilities {
   .font-vulf-sans {
     font-family: "Vulf Sans", Georgia, sans-serif;
+  }
+
+  .font-iosevka {
+    font-family: "Iosevka Aile Web", sans-serif;
+  }
+
+  .backdrop-blur-20 {
+    @apply bg-opacity-90;
+  }
+
+  @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+    .backdrop-blur-20 {
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
   }
 
   .debug,
@@ -54,7 +70,7 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-screen text-base leading-relaxed text-black bg-white lg:text-xl xl:text-2xl dark:bg-black dark:text-gray-200 font-vulf-sans;
+  @apply min-h-screen text-base text-black bg-white lg:text-xl xl:text-2xl dark:bg-black dark:text-gray-200 font-iosevka
 }
 
 code {

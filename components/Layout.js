@@ -8,7 +8,7 @@ import cn from "classnames";
 const MobileNav = ({ active, ...props }) => {
   const [open, setOpen] = useState(false);
   const activeCls =
-    "btn text-black bg-gradient-to-r from-gold-500 to-sunset-300";
+    "btn text-black bg-gradient-to-r dark:from-sunset-300 dark:to-gold-500 from-bg-blue-700 to-purple-500";
   const normieCls = "font-normal btn";
 
   return (
@@ -45,11 +45,15 @@ const MobileNav = ({ active, ...props }) => {
 };
 
 const DesktopNav = ({ active, className }) => {
-  const activeCls = 'btn text-black dark:text-white'
-  const normieCls = 'btn inline bg-gradient-to-b text-transparent bg-clip-text from-sunset-300 dark:to-gold-500 to-gold-600'
+  const activeCls = 'btn px-5 font-normal dark:text-white'
+  const normieCls = 'btn px-5 font-normal inline bg-gradient-to-r text-transparent bg-clip-text  dark:from-sunset-300 dark:to-gold-500 from-blue-400 to-purple-500'
 
   return (
-    <div className={cn("justify-center space-x-2", className)}>
+    <div className={cn("space-x-2", className)}>
+      <Link href="/">
+        <a className={active === "about" ? activeCls : normieCls}>Mikkel Malmberg</a>
+      </Link>
+
       <Link href="/">
         <a className={active === "about" ? activeCls : normieCls}>About</a>
       </Link>
@@ -78,12 +82,12 @@ export default function Layout({ active, title, children }) {
           <DesktopNav active={active} className="hidden lg:flex" />
         </div>
         <div
-          className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-50 dark:bg-opacity-10"
-          style={{ WebkitBackdropFilter: "blur(20px)", zIndex: "-1" }}
+          className="absolute top-0 left-0 w-full h-full bg-white dark:bg-black backdrop-blur-20 bg-opacity-30 dark:bg-opacity-10"
+          style={{ zIndex: "-1" }}
         />
       </nav>
 
-      <div className="h-14 lg:h-32"></div>
+      <div className="h-12 lg:h-24"></div>
 
       {children}
 
