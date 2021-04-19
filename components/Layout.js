@@ -58,6 +58,10 @@ const DesktopNav = ({ active, className }) => {
         <a className={active === "about" ? activeCls : normieCls}>About</a>
       </Link>
 
+      {false && <Link href="/projects">
+        <a className={active === "projects" ? activeCls : normieCls}>Projects</a>
+      </Link>}
+
       <Link href="/writing">
         <a className={active === "writing" ? activeCls : normieCls}>Writing</a>
       </Link>

@@ -4,14 +4,43 @@ import Layout from "../../components/Layout";
 import Buttondown from "../../components/Buttondown";
 import { getIssue, getAllIssues } from "../../src/issues";
 import markdown from "../../src/markdown";
+import { NextSeo } from "next-seo";
 
-export default function IssuePage({ issue }) {
+const baseUrl =
+  "https://on-demand.bannerbear.com/taggedurl/K52R3X18y7Pd4GDwrV/image.jpg";
+
+const bannerbearImage = (text) =>
+  `${baseUrl}?modifications=[text---text~~${encodeURIComponent(text)}]`;
+
+export default function IssuePage({ issue, ogImage }) {
   return (
     <Layout active="writing" title={issue.title}>
+      <NextSeo
+        title={issue.title}
+        description="En udgave af nyhedsbrevet COMPUTERS. Af Mikkel Malmberg"
+        openGraph={{
+          images: [
+            {
+              url: ogImage,
+              width: 1200,
+              height: 630,
+              alt: issue.title,
+            },
+          ],
+          site_name: "Mikkel Malmberg",
+        }}
+        twitter={{
+          handle: "@mikker",
+          cardType: "summary_large_image",
+        }}
+      />
+
       <div className="m-3 lg:mx-auto lg:max-w-2xl xl:max-w-3xl ">
         <p className="mb-3 lg:mb-10">
           <Link href="/writing">
-            <a className="text-sm bg-gray-500 bg-opacity-10 dark:bg-opacity-30 btn">&larr; Flere udgaver</a>
+            <a className="text-sm bg-gray-500 bg-opacity-10 dark:bg-opacity-30 btn">
+              &larr; Flere udgaver
+            </a>
           </Link>
         </p>
 
@@ -39,8 +68,8 @@ export default function IssuePage({ issue }) {
 }
 
 export async function getStaticProps({ params }) {
-  const issue = getIssue(params.num, ["title", "content"]);
-
+  const issue = getIssue(params.num, ["issue", "title", "content"]);
+  const ogImage = bannerbearImage(`#${issue.issue}: ${issue.title}`);
   const content = await markdown(issue.content);
 
   return {
@@ -49,6 +78,7 @@ export async function getStaticProps({ params }) {
         ...issue,
         content,
       },
+      ogImage,
     },
   };
 }
