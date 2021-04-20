@@ -70,7 +70,7 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-screen text-base text-black bg-white dark:font-light lg:text-xl xl:text-2xl dark:bg-black dark:text-gray-200 font-iosevka
+  @apply min-h-screen text-base text-black bg-white dark:font-light lg:text-xl xl:text-2xl dark:bg-black dark:text-gray-200 font-iosevka tracking-tight
 }
 
 code {

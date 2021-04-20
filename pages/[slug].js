@@ -13,7 +13,9 @@ export default function PostPage({ post }) {
           <div className="h-8" />
 
           <Link href="/writing">
-            <a className="text-sm bg-gray-100 btn">&larr; Writing</a>
+            <a className="text-sm bg-gray-500 bg-opacity-10 dark:bg-opacity-30 btn">
+              &larr; Writing
+            </a>
           </Link>
         </p>
 

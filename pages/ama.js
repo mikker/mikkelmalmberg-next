@@ -81,6 +81,7 @@ export default function AmaPage({ questions }) {
 export const getStaticProps = async () => {
   const questions = await prisma.question.findMany({
     where: { published: true },
+    orderBy: { updatedAt: 'desc' },
     include: { answers: {} },
   });
   return {
