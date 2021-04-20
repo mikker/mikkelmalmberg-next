@@ -13,8 +13,14 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script async defer src="https://sa.mikkelmalmberg.com/latest.js"></script>
-          <noscript><img src="https://sa.mikkelmalmberg.com/noscript.gif" alt=""/></noscript>
+          <script
+            async
+            defer
+            src="https://sa.mikkelmalmberg.com/latest.js"
+          ></script>
+          <noscript>
+            <img src="https://sa.mikkelmalmberg.com/noscript.gif" alt="" />
+          </noscript>
         </body>
       </Html>
     );

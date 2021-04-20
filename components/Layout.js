@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,6 +11,13 @@ const MobileNav = ({ active, ...props }) => {
   const activeCls =
     "btn text-black bg-gradient-to-r dark:from-sunset-300 dark:to-gold-500 from-bg-blue-700 to-purple-500";
   const normieCls = "font-normal btn";
+
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    s.setAttribute("async", "true");
+    document.head.appendChild(s);
+  }, []);
 
   return (
     <div className="flex flex-col justify-center flex-1" {...props}>
@@ -45,22 +53,29 @@ const MobileNav = ({ active, ...props }) => {
 };
 
 const DesktopNav = ({ active, className }) => {
-  const activeCls = 'btn px-5 font-normal dark:text-white'
-  const normieCls = 'btn px-5 font-normal inline bg-gradient-to-r text-transparent bg-clip-text  dark:from-sunset-300 dark:to-gold-500 from-blue-400 to-purple-500'
+  const activeCls = "btn px-5 font-normal dark:text-white";
+  const normieCls =
+    "btn px-5 font-normal inline bg-gradient-to-r text-transparent bg-clip-text  dark:from-sunset-300 dark:to-gold-500 from-blue-400 to-purple-500";
 
   return (
     <div className={cn("space-x-2", className)}>
       <Link href="/">
-        <a className={active === "about" ? activeCls : normieCls}>Mikkel Malmberg</a>
+        <a className={active === "about" ? activeCls : normieCls}>
+          Mikkel Malmberg
+        </a>
       </Link>
 
       <Link href="/">
         <a className={active === "about" ? activeCls : normieCls}>About</a>
       </Link>
 
-      {false && <Link href="/projects">
-        <a className={active === "projects" ? activeCls : normieCls}>Projects</a>
-      </Link>}
+      {false && (
+        <Link href="/projects">
+          <a className={active === "projects" ? activeCls : normieCls}>
+            Projects
+          </a>
+        </Link>
+      )}
 
       <Link href="/writing">
         <a className={active === "writing" ? activeCls : normieCls}>Writing</a>
