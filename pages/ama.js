@@ -26,7 +26,7 @@ export default function AmaPage({ questions }) {
 
   return (
     <Layout active="ama" title="AMA">
-      <div className="p-5 mx-auto max-w-screen-sm lg:px-0">
+      <div className="p-5 mx-auto max-w-screen-md lg:px-0">
         <header className="">
           <h1 className="mb-2 font-black">Ask Me Anything</h1>
           <h2 className="text-gray-500">
@@ -65,7 +65,7 @@ export default function AmaPage({ questions }) {
 
         <div className="h-6 lg:h-8"></div>
 
-        <div className="leading-relaxed nested-links">
+        <div className="text-lg leading-relaxed nested-links">
           {questions.map((question) => (
             <>
               <Question question={question} key={question.id} />
