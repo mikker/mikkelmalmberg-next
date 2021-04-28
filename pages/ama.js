@@ -67,10 +67,10 @@ export default function AmaPage({ questions }) {
 
         <div className="text-lg leading-relaxed nested-links">
           {questions.map((question) => (
-            <>
-              <Question question={question} key={question.id} />
+            <div key={question.id}>
+              <Question question={question} />
               <div className="mb-8 lg:mb-12" />
-            </>
+            </div>
           ))}
         </div>
       </div>
