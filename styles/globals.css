@@ -22,7 +22,7 @@
   }
 
   .link {
-    @apply font-bold text-transparent md:font-normal bg-gradient-to-r from-blue-400 to-purple-500 dark:from-sunset-300 dark:to-gold-500 bg-clip-text decoration-clone;
+    @apply font-semibold text-transparent md:font-normal bg-gradient-to-r from-blue-400 to-purple-500 dark:from-sunset-300 dark:to-gold-500 bg-clip-text decoration-clone;
     @apply hover:text-white hover:dark:text-black hover:bg-clip-border hover:bg-gradient-to-r;
 
     text-underline-offset: 0.11em;
@@ -48,11 +48,9 @@
     font-family: "Iosevka Aile Web", sans-serif;
   }
 
-  .backdrop-blur-20 {
-    @apply bg-opacity-90;
-  }
-
-  @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  @supports (
+    (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
+  ) {
     .backdrop-blur-20 {
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
@@ -70,7 +68,7 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-screen text-base text-black bg-white dark:font-light lg:text-xl xl:text-2xl dark:bg-black dark:text-gray-200 font-iosevka tracking-tight
+  @apply min-h-screen text-base tracking-tight text-black bg-white dark:font-light lg:text-xl xl:text-2xl dark:bg-black dark:text-gray-200 font-iosevka;
 }
 
 code {

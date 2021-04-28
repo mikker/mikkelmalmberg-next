@@ -8,7 +8,7 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
     <Layout active="writing" title="Writing">
       <div className="p-5 mx-auto max-w-screen-xl lg:flex lg:space-x-8">
         <div className="lg:w-1/2 flex-0 space-y-3">
-          <h2 className="font-bold">POSTS</h2>
+          <h2 className="font-semibold">POSTS</h2>
           <p className="">
             <span className="inline-block px-1 text-white bg-blue-500 rounded">
               English
@@ -29,7 +29,7 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
         <div className="h-6 lg:hidden"></div>
 
         <div className="lg:w-1/2 flex-0 space-y-3">
-          <h2 className="font-bold">COMPUTERS</h2>
+          <h2 className="font-semibold">COMPUTERS</h2>
           <p className="">
             {" "}
             <span className="inline-block px-1 text-white bg-red-500 rounded">
@@ -48,7 +48,7 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
 
               return (
                 <div key={year}>
-                  <h2 className="font-bold">{year}</h2>
+                  <h2 className="font-semibold">{year}</h2>
                   <ul className="">
                     {sorted.map((issue) => (
                       <li key={issue.issue}>

@@ -101,7 +101,7 @@ export default function Layout({ active, title, children }) {
           <DesktopNav active={active} className="hidden lg:flex" />
         </div>
         <div
-          className="absolute top-0 left-0 w-full h-full bg-white dark:bg-black backdrop-blur-20 bg-opacity-30 dark:bg-opacity-10"
+          className="absolute top-0 left-0 w-full h-full bg-white dark:bg-black backdrop-blur-20 bg-opacity-10 dark:bg-opacity-10"
           style={{ zIndex: "-1" }}
         />
       </nav>

@@ -27,8 +27,8 @@ export default function AmaPage({ questions }) {
   return (
     <Layout active="ama" title="AMA">
       <div className="p-5 mx-auto max-w-screen-md lg:px-0">
-        <header className="">
-          <h1 className="mb-2 font-black">Ask Me Anything</h1>
+        <header className="text-lg">
+          <h1 className="mb-2 font-semibold">Ask Me Anything</h1>
           <h2 className="text-gray-500">
             Anything goes! Questions will show up when I add an answer.
           </h2>
@@ -97,8 +97,8 @@ const Question = ({
 
   return (
     <>
-      <dt className="mb-2 font-bold">{body}</dt>
-      <dd>
+      <dt className="mb-2 font-semibold">Q: {body}</dt>
+      <dd className='prose-lg'>
         {answers.map((answer) => (
           <Answer answer={answer} key={answer.id} />
         ))}
@@ -122,7 +122,7 @@ const Question = ({
 };
 
 const Answer = ({ answer: { body } }) => (
-  <li
+  <div
     className="text-gray-700 dark:text-gray-200"
     dangerouslySetInnerHTML={{ __html: markdown(body) }}
   />
