@@ -4,7 +4,7 @@ export default async function handle(req, res) {
   const { body } = req.body;
 
   const result = await prisma.question.create({
-    data: { body }
+    data: { body },
   });
 
   res.json(result);

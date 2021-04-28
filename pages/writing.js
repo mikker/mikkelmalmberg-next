@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import Link from "next/link";
 import { getAllIssuesByYear } from "../src/issues";
 import { getAllPosts } from "../src/posts";
+import Buttondown from "../components/Buttondown";
 
 export default function WritingPage({ issuesByYear, postsByDate }) {
   return (
@@ -15,6 +16,11 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
             </span>{" "}
             musings on building software
           </p>
+
+          <div className="p-2 text-base bg-gray-100 dark:bg-gray-800 rounded-xl">
+            <Buttondown list="brainbow" buttonTitle="Subscribe" />
+          </div>
+
           <ul className="">
             {postsByDate.map((post) => (
               <li key={post.slug}>
@@ -37,6 +43,10 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
             </span>{" "}
             newsletter on life with computers
           </p>
+
+          <div className="p-2 text-base bg-gray-100 dark:bg-gray-800 rounded-xl">
+            <Buttondown list="computers" buttonTitle="Tilmeld" />
+          </div>
 
           {Object.keys(issuesByYear)
             .sort()

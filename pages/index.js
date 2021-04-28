@@ -29,10 +29,10 @@ export default function AboutPage() {
 
           <div className="h-8 lg:h-0"></div>
 
-          <h1 className=''>
-            <strong>Hello,</strong> I'm Mikkel.{' '}
+          <h1 className="">
+            <strong>Hello,</strong> I'm Mikkel.{" "}
           </h1>
-          <p className=''>
+          <p className="">
             I'm building{" "}
             <a className="link" href="https://brainbow.studio">
               platforms for creators
@@ -42,9 +42,9 @@ export default function AboutPage() {
               weekly tech show on Danish P1
             </a>
             , write a{" "}
-            <a className="link" href="https://computers.mikkelmalmberg.com">
-              well-liked Danish newsletter
-            </a>
+            <Link href="/writing">
+              <a className="link">well-liked Danish newsletter</a>
+            </Link>
             , am a Software Engineer at{" "}
             <a className="link" href="https://elastic.co/solutions/apm">
               Elastic

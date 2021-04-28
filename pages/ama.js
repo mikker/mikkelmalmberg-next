@@ -81,7 +81,7 @@ export default function AmaPage({ questions }) {
 export const getStaticProps = async () => {
   const questions = await prisma.question.findMany({
     where: { published: true },
-    orderBy: { updatedAt: 'desc' },
+    orderBy: { updatedAt: "desc" },
     include: { answers: {} },
   });
   return {
@@ -98,7 +98,7 @@ const Question = ({
   return (
     <>
       <dt className="mb-2 font-semibold">Q: {body}</dt>
-      <dd className='prose-lg'>
+      <dd className="prose-lg">
         {answers.map((answer) => (
           <Answer answer={answer} key={answer.id} />
         ))}
