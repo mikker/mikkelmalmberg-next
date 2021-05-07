@@ -8,7 +8,26 @@ import markdown from "../src/markdown";
 export default function PostPage({ post }) {
   return (
     <Layout active="writing" title={post.title}>
-      <div className="m-3 lg:mx-auto lg:max-w-2xl xl:max-w-4xl ">
+      <NextSeo
+        title={post.title}
+        description="A post by Mikkel Malmberg"
+        openGraph={{
+          images: [
+            {
+              url: ogImage,
+              width: 1200,
+              height: 630,
+              alt: post.title,
+            },
+          ],
+          site_name: "Mikkel Malmberg",
+        }}
+        twitter={{
+          handle: "@mikker",
+          cardType: "summary_large_image",
+        }}
+      />
+      <div className="m-3 lg:mx-auto lg:max-w-2xl xl:max-w-3xl ">
         <p className="mb-3 lg:mb-10">
           <div className="h-8" />
 
@@ -19,7 +38,7 @@ export default function PostPage({ post }) {
           </Link>
         </p>
 
-        <article className="prose xl:prose-2xl lg:prose-lg dark:prose-light">
+        <article className="prose xl:prose-xl lg:prose-lg dark:prose-light">
           <header>
             <h1>{post.title}</h1>
           </header>

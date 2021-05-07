@@ -9,7 +9,19 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
     <Layout active="writing" title="Writing">
       <div className="p-5 mx-auto max-w-screen-xl lg:flex lg:space-x-8">
         <div className="lg:w-1/2 flex-0 space-y-3">
-          <h2 className="font-semibold">POSTS</h2>
+          <h2 className="font-semibold">Pages</h2>
+          <ul>
+            <li>
+              <Link href="/uses">
+                <a className="link">/uses</a>
+              </Link>{" "}
+              &mdash; My current setup
+            </li>
+          </ul>
+
+          <div className="h-8"></div>
+
+          <h2 className="font-semibold">Posts</h2>
           <p className="">
             <span className="inline-block px-1 text-white bg-blue-500 rounded">
               English
@@ -35,7 +47,7 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
         <div className="h-6 lg:hidden"></div>
 
         <div className="lg:w-1/2 flex-0 space-y-3">
-          <h2 className="font-semibold">COMPUTERS</h2>
+          <h2 className="font-semibold">Computers</h2>
           <p className="">
             {" "}
             <span className="inline-block px-1 text-white bg-red-500 rounded">
