@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import Buttondown from "../components/Buttondown";
 import { getPost, getAllPosts } from "../src/posts";
 import markdown from "../src/markdown";
+import { NextSeo } from "next-seo";
 
 export default function PostPage({ post }) {
   return (
