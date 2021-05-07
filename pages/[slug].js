@@ -6,7 +6,13 @@ import { getPost, getAllPosts } from "../src/posts";
 import markdown from "../src/markdown";
 import { NextSeo } from "next-seo";
 
-export default function PostPage({ post }) {
+const baseUrl =
+  "https://on-demand.bannerbear.com/taggedurl/K52R3X18y7Pd4GDwrV/image.jpg";
+
+const bannerbearImage = (text) =>
+  `${baseUrl}?modifications=[text---text~~${encodeURIComponent(text)}]`;
+
+export default function PostPage({ post, ogImage }) {
   return (
     <Layout active="writing" title={post.title}>
       <NextSeo
@@ -67,7 +73,7 @@ export default function PostPage({ post }) {
 
 export async function getStaticProps({ params }) {
   const post = getPost(params.slug, ["title", "content"]);
-
+  const ogImage = bannerbearImage(post.title);
   const content = await markdown(post.content);
 
   return {
@@ -76,6 +82,7 @@ export async function getStaticProps({ params }) {
         ...post,
         content,
       },
+      ogImage,
     },
   };
 }
