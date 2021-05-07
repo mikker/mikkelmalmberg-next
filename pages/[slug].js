@@ -4,36 +4,17 @@ import Layout from "../components/Layout";
 import Buttondown from "../components/Buttondown";
 import { getPost, getAllPosts } from "../src/posts";
 import markdown from "../src/markdown";
-import { NextSeo } from "next-seo";
-
-const baseUrl =
-  "https://on-demand.bannerbear.com/taggedurl/K52R3X18y7Pd4GDwrV/image.jpg";
-
-const bannerbearImage = (text) =>
-  `${baseUrl}?modifications=[text---text~~${encodeURIComponent(text)}]`;
+import Meta, { bannerbearImage } from "../src/meta";
 
 export default function PostPage({ post, ogImage }) {
   return (
     <Layout active="writing" title={post.title}>
-      <NextSeo
+      <Meta
         title={post.title}
         description="A post by Mikkel Malmberg"
-        openGraph={{
-          images: [
-            {
-              url: ogImage,
-              width: 1200,
-              height: 630,
-              alt: post.title,
-            },
-          ],
-          site_name: "Mikkel Malmberg",
-        }}
-        twitter={{
-          handle: "@mikker",
-          cardType: "summary_large_image",
-        }}
+        image={ogImage}
       />
+
       <div className="m-3 lg:mx-auto lg:max-w-2xl xl:max-w-3xl ">
         <p className="mb-3 lg:mb-10">
           <div className="h-8" />
