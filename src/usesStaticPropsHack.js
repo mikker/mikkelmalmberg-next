@@ -1,4 +1,4 @@
-import { bannerbearImage } from "../src/meta";
+import { bannerbearImage } from "./meta";
 
 // Hack to work around exporting functions from MDX
 export function getStaticProps() {
