@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-BlackItalic.woff2') format('woff2'),
+        url('VulfSans-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-BlackItalic.woff2') format('woff2'),
+        url('VulfSans-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-BlackItalic.woff2') format('woff2'),
+        url('VulfSans-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Medium.woff2') format('woff2'),
+        url('VulfSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Regular.woff2') format('woff2'),
+        url('VulfSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Light.woff2') format('woff2'),
+        url('VulfSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Bold.woff2') format('woff2'),
+        url('VulfSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-BoldItalic.woff2') format('woff2'),
+        url('VulfSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-MediumItalic.woff2') format('woff2'),
+        url('VulfSans-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Italic.woff2') format('woff2'),
+        url('VulfSans-Italic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Black.woff2') format('woff2'),
+        url('VulfSans-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-LightItalic.woff2') format('woff2'),
+        url('VulfSans-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Medium.woff2') format('woff2'),
+        url('VulfSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-LightItalic.woff2') format('woff2'),
+        url('VulfSans-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-BoldItalic.woff2') format('woff2'),
+        url('VulfSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-MediumItalic.woff2') format('woff2'),
+        url('VulfSans-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Black.woff2') format('woff2'),
+        url('VulfSans-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Light.woff2') format('woff2'),
+        url('VulfSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Black.woff2') format('woff2'),
+        url('VulfSans-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Light.woff2') format('woff2'),
+        url('VulfSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Regular.woff2') format('woff2'),
+        url('VulfSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-MediumItalic.woff2') format('woff2'),
+        url('VulfSans-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Italic.woff2') format('woff2'),
+        url('VulfSans-Italic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Italic.woff2') format('woff2'),
+        url('VulfSans-Italic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-BoldItalic.woff2') format('woff2'),
+        url('VulfSans-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Regular.woff2') format('woff2'),
+        url('VulfSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Bold.woff2') format('woff2'),
+        url('VulfSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Medium.woff2') format('woff2'),
+        url('VulfSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-Bold.woff2') format('woff2'),
+        url('VulfSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vulf Sans Embedded';
+    src: url('VulfSans-LightItalic.woff2') format('woff2'),
+        url('VulfSans-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+

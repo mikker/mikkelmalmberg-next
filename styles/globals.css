@@ -1,4 +1,4 @@
-@import "./fonts/iosevka-aile/iosevka-aile.css";
+@import "./fonts/vulf-sans/stylesheet.css";
 
 @layer components {
   .btn {
@@ -41,11 +41,7 @@
 
 @layer utilities {
   .font-vulf-sans {
-    font-family: "Vulf Sans", Georgia, sans-serif;
-  }
-
-  .font-iosevka {
-    font-family: "Iosevka Aile Web", sans-serif;
+    font-family: "Vulf Sans Embedded", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 
   @supports (
@@ -68,7 +64,7 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-screen text-base tracking-tight text-black bg-white dark:font-light lg:text-xl xl:text-xl dark:bg-black dark:text-gray-200 font-iosevka;
+  @apply min-h-screen text-base text-black bg-white dark:font-light lg:text-xl xl:text-xl dark:bg-gray-900 dark:text-gray-200 font-vulf-sans;
 }
 
 code {
