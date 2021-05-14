@@ -94,10 +94,11 @@ const Question = ({
   question: { id, body, answers, upvotes: initialUpvotes, updatedAt },
 }) => {
   const [upvotes, setUpvotes] = useState(initialUpvotes);
+  const hash = `question-${id}`
 
   return (
     <>
-      <dt className="mb-2 font-semibold">Q: {body}</dt>
+      <dt className="mb-2"><a className='font-bold' href={`#${hash}`} name={hash}>Q: {body}</a></dt>
       <dd className="prose-lg">
         {answers.map((answer) => (
           <Answer answer={answer} key={answer.id} />
