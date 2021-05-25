@@ -88,7 +88,7 @@ export const getStaticProps = async () => {
     sorts: [
       {
         property: "forcedDate",
-        direction: "descending"
+        direction: "descending",
       },
       {
         property: "updatedAt",
@@ -106,6 +106,9 @@ export const getStaticProps = async () => {
 const Question = ({ question }) => {
   const [upvotes, setUpvotes] = useState(question.properties.upvotes.number);
   const hash = `question-${question.id}`;
+  const date =
+    question.properties.forcedDate.date.start ||
+    question.properties.updatedAt.last_edited_time;
 
   return (
     <>
@@ -129,11 +132,7 @@ const Question = ({ question }) => {
           >
             &hearts;{upvotes}
           </button>
-          &nbsp;&middot;{" "}
-          {formatDistance(
-            parseISO(question.properties.updatedAt.last_edited_time),
-            new Date()
-          )}
+          &nbsp;&middot;&nbsp; {formatDistance(parseISO(date), new Date())} ago
         </p>
       </dd>
     </>
