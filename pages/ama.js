@@ -163,9 +163,9 @@ const RichText = ({ block }) => {
           );
         if (token.href) text = <a href={token.href}>{text}</a>;
         if (token.annotations.bold) text = <strong>{text}</strong>;
-        if (token.annotations.italic) text = <strong>{text}</strong>;
-        if (token.annotations.strikethrough) text = <strong>{text}</strong>;
-        if (token.annotations.underline) text = <strong>{text}</strong>;
+        if (token.annotations.italic) text = <em>{text}</em>;
+        if (token.annotations.strikethrough) text = <del>{text}</del>;
+        if (token.annotations.underline) text = <u>{text}</u>;
         return <span key={i}>{text}</span>;
       })}
     </div>
