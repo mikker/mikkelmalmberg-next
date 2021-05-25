@@ -87,7 +87,7 @@ export const getStaticProps = async () => {
     },
     sorts: [
       {
-        property: "forcedDate",
+        property: "answeredAt",
         direction: "descending",
       },
       {
@@ -107,7 +107,7 @@ const Question = ({ question }) => {
   const [upvotes, setUpvotes] = useState(question.properties.upvotes.number);
   const hash = `question-${question.id}`;
   const date =
-    question.properties.forcedDate.date.start ||
+    question.properties.answeredAt.date.start ||
     question.properties.updatedAt.last_edited_time;
 
   return (
