@@ -1,12 +1,19 @@
-import prisma from "../../../src/prisma";
+import notion, { databaseId } from "../../../src/notion";
 
 export default async function handle(req, res) {
   const { id } = req.body;
 
-  const result = await prisma.question.update({
-    where: { id },
-    data: { upvotes: { increment: 1 } },
+  const current = await notion.pages.retrieve({
+    page_id: id,
+  });
+  const result = await notion.pages.update({
+    page_id: id,
+    properties: {
+      upvotes: {
+        number: current.properties.upvotes.number + 1,
+      },
+    },
   });
 
-  res.json(result);
+  res.json({ upvotes: result.properties.upvotes.number });
 }

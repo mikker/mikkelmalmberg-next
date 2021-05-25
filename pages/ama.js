@@ -1,9 +1,9 @@
 import Layout from "../components/Layout";
 import { useState } from "react";
 import Link from "next/link";
-import prisma from "../src/prisma";
+import notion, { databaseId } from "../src/notion";
 import { post } from "../src/api";
-import { formatDistance } from "date-fns";
+import { parseISO, formatDistance } from "date-fns";
 import { sync as markdown } from "../src/markdown";
 
 export default function AmaPage({ questions }) {
@@ -66,7 +66,7 @@ export default function AmaPage({ questions }) {
         <div className="h-6 lg:h-8"></div>
 
         <div className="text-lg leading-relaxed nested-links">
-          {questions.map((question) => (
+          {questions.results.map((question) => (
             <div key={question.id}>
               <Question question={question} />
               <div className="mb-8 lg:mb-12" />
@@ -79,30 +79,44 @@ export default function AmaPage({ questions }) {
 }
 
 export const getStaticProps = async () => {
-  const questions = await prisma.question.findMany({
-    where: { published: true },
-    orderBy: { updatedAt: "desc" },
-    include: { answers: {} },
+  const questions = await notion.databases.query({
+    database_id: databaseId,
+    filter: {
+      property: "published",
+      checkbox: { equals: true },
+    },
+    sorts: [
+      {
+        property: "forcedDate",
+        direction: "descending"
+      },
+      {
+        property: "updatedAt",
+        direction: "descending",
+      },
+    ],
   });
+
   return {
     props: { questions },
-    revalidate: 1, // secs
+    revalidate: 10, // secs
   };
 };
 
-const Question = ({
-  question: { id, body, answers, upvotes: initialUpvotes, updatedAt },
-}) => {
-  const [upvotes, setUpvotes] = useState(initialUpvotes);
-  const hash = `question-${id}`
+const Question = ({ question }) => {
+  const [upvotes, setUpvotes] = useState(question.properties.upvotes.number);
+  const hash = `question-${question.id}`;
 
   return (
     <>
-      <dt className="mb-2"><a className='font-bold' href={`#${hash}`} name={hash}>Q: {body}</a></dt>
+      <dt className="mb-2">
+        <a className="font-bold" href={`#${hash}`} name={hash}>
+          Q: {question.properties.question.title[0].plain_text}
+        </a>
+      </dt>
       <dd className="prose-lg">
-        {answers.map((answer) => (
-          <Answer answer={answer} key={answer.id} />
-        ))}
+        <Answer block={question.properties.answer} />
+
         <p className="mt-2 text-gray-500">
           <button
             className={`relative px-1 py-0 -ml-1 btn ${
@@ -110,24 +124,54 @@ const Question = ({
             }`}
             onClick={() => {
               setUpvotes(upvotes + 1);
-              upvote(id).then(setUpvotes);
+              upvote(question.id).then(setUpvotes);
             }}
           >
             &hearts;{upvotes}
           </button>
-          &nbsp;&middot; {formatDistance(updatedAt, new Date())}
+          &nbsp;&middot;{" "}
+          {formatDistance(
+            parseISO(question.properties.updatedAt.last_edited_time),
+            new Date()
+          )}
         </p>
       </dd>
     </>
   );
 };
 
-const Answer = ({ answer: { body } }) => (
-  <div
-    className="text-gray-700 dark:text-gray-200"
-    dangerouslySetInnerHTML={{ __html: markdown(body) }}
-  />
-);
+const Answer = ({ block }) => {
+  switch (block.type) {
+    case "rich_text":
+      return <RichText block={block} />;
+    default:
+      return <div />;
+  }
+};
+
+const RichText = ({ block }) => {
+  return (
+    <div>
+      {block.rich_text.map((token, i) => {
+        let text = token.plain_text;
+        if (text.match(/\n\n/))
+          text = (
+            <span
+              dangerouslySetInnerHTML={{
+                __html: text.replace("\n\n", "<br><br>"),
+              }}
+            />
+          );
+        if (token.href) text = <a href={token.href}>{text}</a>;
+        if (token.annotations.bold) text = <strong>{text}</strong>;
+        if (token.annotations.italic) text = <strong>{text}</strong>;
+        if (token.annotations.strikethrough) text = <strong>{text}</strong>;
+        if (token.annotations.underline) text = <strong>{text}</strong>;
+        return <span key={i}>{text}</span>;
+      })}
+    </div>
+  );
+};
 
 const upvote = async (id) => {
   let result;
