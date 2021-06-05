@@ -8,8 +8,8 @@ import Layout from "../components/Layout";
 export default function AboutPage() {
   return (
     <Layout active="about" title="Hello, I'm Mikkel Malmberg">
-      <div className="px-5">
-        <article className="mx-auto text-xl leading-relaxed tracking-tighter uppercase md:text-4xl md:leading-relaxed lg:leading-tight lg:font-light lg:text-7xl xl:text-9xl max-w-screen-2xl">
+      <div className="p-5 mx-auto max-w-screen-xl">
+        <article className="mx-auto text-xl leading-relaxed md:text-4xl md:leading-relaxed lg:leading-tight lg:font-light max-w-screen-2xl">
           <div className="relative flex justify-center lg:float-right right-5">
             <div className="relative flex-none -mr-20">
               <Image
@@ -61,11 +61,18 @@ export default function AboutPage() {
         <div className="h-12"></div>
 
         {/* <div className="flex justify-center"> */}
-        {/*   <Image */}
-        {/*     src="/brainbow-logo.svg" */}
-        {/*     width={48} */}
-        {/*     height={48} */}
-        {/*   /> */}
+        {/*   <Image src="/brainbow-logo.svg" width={48} height={48} /> */}
+        {/* </div> */}
+
+        {/* <div className="h-12"></div> */}
+
+        {/* <div className="grid grid-cols-2 gap-3"> */}
+        {/*   <div className='flex items-center justify-center aspect-w-1 aspect-h-1'> */}
+        {/*     ok */}
+        {/*   </div> */}
+        {/*   <div className='flex items-center justify-center aspect-w-1 aspect-h-1'> */}
+        {/*     ok */}
+        {/*   </div> */}
         {/* </div> */}
       </div>
     </Layout>
