@@ -64,7 +64,7 @@
 @tailwind utilities;
 
 body {
-  @apply min-h-screen text-base text-black bg-white dark:font-light lg:text-xl xl:text-xl dark:bg-gray-900 dark:text-gray-200 font-vulf-sans;
+  @apply min-h-screen text-base text-black bg-white lg:text-xl xl:text-xl dark:bg-gray-900 dark:text-gray-200 font-vulf-sans;
 }
 
 code {
