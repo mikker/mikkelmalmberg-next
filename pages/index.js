@@ -29,10 +29,11 @@ export default function AboutPage() {
 
           <div className="h-8 lg:h-0"></div>
 
-          <h1 className="">
+          <h1>
             <strong>Hello,</strong> I'm Mikkel.{" "}
           </h1>
-          <p className="">
+          <div className="h-8"></div>
+          <p>
             I'm building{" "}
             <a className="link" href="https://brainbow.studio">
               platforms for creators
@@ -55,6 +56,14 @@ export default function AboutPage() {
           <p>
             I'd much rather spend my time trying than dreaming and I don't mind
             a little bit of chaos.
+          </p>
+          <div className="h-8"></div>
+          <p>
+            I'm{" "}
+            <a className="link" href="https://twitter.com/mikker">
+              @mikker
+            </a>{" "}
+            on Twitter .
           </p>
         </article>
 
