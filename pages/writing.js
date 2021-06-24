@@ -92,6 +92,9 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
 }
 
 export async function getStaticProps({ params }) {
+  const feeds = await import('../src/generateFeeds')
+  await feeds.default()
+
   const issuesByYear = getAllIssuesByYear(["issue", "title", "date"]);
   const postsByDate = getAllPosts(["title", "slug"]);
 
