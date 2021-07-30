@@ -9,7 +9,44 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="Posts (RSS)"
+            href="/feeds/posts.rss.xml"
+          />
+          <link
+            rel="alternate"
+            type="application/rss+atom"
+            title="Posts (ATOM)"
+            href="/feeds/posts.atom.xml"
+          />
+          <link
+            rel="alternate"
+            type="application/json"
+            title="Posts (JSON)"
+            href="/feeds/posts.json"
+          />
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title="COMPUTERS issues (RSS)"
+            href="/feeds/computers.rss.xml"
+          />
+          <link
+            rel="alternate"
+            type="application/rss+atom"
+            title="COMPUTERS issues (ATOM)"
+            href="/feeds/computers.atom.xml"
+          />
+          <link
+            rel="alternate"
+            type="application/json"
+            title="COMPUTERS issues (JSON)"
+            href="/feeds/computers.json"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
