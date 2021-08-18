@@ -63,7 +63,7 @@ export default function AboutPage() {
             <a className="link" href="https://twitter.com/mikker">
               @mikker
             </a>{" "}
-            on Twitter .
+            on Twitter.
           </p>
         </article>
 
