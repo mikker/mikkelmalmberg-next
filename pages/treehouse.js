@@ -51,11 +51,14 @@ function TreehousePage() {
       .balanceOf(account)
       .call()
       .then((balance) => {
+        setBalance(balance);
+
         if (balance >= 1) {
           confetti();
           setIsFren(true);
-          setBalance(balance);
         }
+
+        setIsLoading(false);
       });
   }, [account]);
 
@@ -65,6 +68,7 @@ function TreehousePage() {
         {!active && (
           <ConnectSection
             onConnectClick={() => {
+              setIsLoading(true);
               activate(connector);
             }}
           />
@@ -73,10 +77,22 @@ function TreehousePage() {
           <div>
             {isLoading && <SemipolarSpinner />}
             {!isLoading && (
-              <div className='text-center leading-loose'>
-                <img src='/mudasir.jpg' className='inline' />
-                <h2 className="font-bold">hi {account}</h2>
-                <p>You hold {balance} $MIKKER and are certifiably my best fren</p>
+              <div className="text-center leading-loose">
+                {isFren && (
+                  <div>
+                    <img src="/mudasir.jpg" className="inline" />
+                    <h2 className="font-bold">hi {account}</h2>
+                    <p>
+                      You hold {balance} $MIKKER and are certifiably my best
+                      fren
+                    </p>
+                  </div>
+                )}
+                {!isFren && (
+                  <p>
+                    You hold {balance} $MIKKER and are not my best fren yet?
+                  </p>
+                )}
               </div>
             )}
           </div>
