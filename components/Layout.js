@@ -46,6 +46,10 @@ const MobileNav = ({ active, ...props }) => {
           <Link href="/ama">
             <a className={active === "ama" ? activeCls : normieCls}>AMA</a>
           </Link>
+
+          <Link href="/treehouse">
+            <a className={active === "treehouse" ? activeCls : normieCls}>🌳</a>
+          </Link>
         </div>
       )}
     </div>
