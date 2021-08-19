@@ -75,7 +75,7 @@ function TreehousePage() {
         )}
         {active && (
           <div>
-            {isLoading && <SemipolarSpinner />}
+            {isLoading && <SemipolarSpinner className="mx-auto" color="#555" />}
             {!isLoading && (
               <div className="text-center leading-loose">
                 {isFren && (
