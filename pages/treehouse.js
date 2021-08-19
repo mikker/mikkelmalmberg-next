@@ -63,7 +63,7 @@ function TreehousePage() {
   }, [account]);
 
   return (
-    <Layout active="treehouse">
+    <Layout title="Treehouse" active="treehouse">
       <div className="p-5 mx-auto text-center">
         {!active && (
           <ConnectSection
