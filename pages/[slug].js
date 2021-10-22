@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 import Buttondown from "../components/Buttondown";
 import { getPost, getAllPosts } from "../src/posts";
 import markdown from "../src/markdown";
-import Meta, { bannerbearImage } from "../src/meta";
+import Meta, { getOpenGraphImage } from "../src/meta";
 
 export default function PostPage({ post, ogImage }) {
   return (
@@ -54,7 +54,7 @@ export default function PostPage({ post, ogImage }) {
 
 export async function getStaticProps({ params }) {
   const post = getPost(params.slug, ["title", "content"]);
-  const ogImage = bannerbearImage(post.title);
+  const ogImage = getOpenGraphImage({ headline: post.title });
   const content = await markdown(post.content);
 
   return {
