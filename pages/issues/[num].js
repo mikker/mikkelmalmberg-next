@@ -4,7 +4,7 @@ import Layout from "../../components/Layout";
 import Buttondown from "../../components/Buttondown";
 import { getIssue, getAllIssues } from "../../src/issues";
 import markdown from "../../src/markdown";
-import Meta, { bannerbearImage } from "../../src/meta";
+import Meta, { getOpenGraphImage } from "../../src/meta";
 
 export default function IssuePage({ issue, ogImage }) {
   return (
@@ -45,7 +45,9 @@ export default function IssuePage({ issue, ogImage }) {
 
 export async function getStaticProps({ params }) {
   const issue = getIssue(params.num, ["issue", "title", "content"]);
-  const ogImage = bannerbearImage(`#${issue.issue}: ${issue.title}`);
+  const ogImage = getOpenGraphImage({
+    headline: `#${issue.issue}: ${issue.title}`,
+  });
   const content = await markdown(issue.content);
 
   return {

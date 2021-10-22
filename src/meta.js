@@ -1,10 +1,25 @@
 import { NextSeo } from "next-seo";
 
-const baseUrl =
-  "https://on-demand.bannerbear.com/taggedurl/K52R3X18y7Pd4GDwrV/image.jpg";
+const Sampler = (templateId) => {
+  const SAMPLER_BASE_URL = "https://sampler.app/api";
 
-export const bannerbearImage = (text) =>
-  `${baseUrl}?modifications=[text---text~~${encodeURIComponent(text)}]`;
+  const getImage = (data) => {
+    const queryParams = data
+      ? Object.entries(data).reduce((sum, [key, value]) => {
+          const separator = sum.length === 0 ? "?" : "&";
+          return `${sum}${separator}${key}=${encodeURIComponent(value)}`;
+        }, "")
+      : "";
+    return `${SAMPLER_BASE_URL}/${templateId}/image.jpeg${queryParams}`;
+  };
+
+  return {
+    getImage,
+  };
+};
+
+export const issuesTemplate = Sampler("ae56cd06-c1e7-44df-b03d-471267075f22");
+export const getOpenGraphImage = (data) => issuesTemplate.getImage(data);
 
 export default function Meta({ title, description, image }) {
   const openGraph = image
