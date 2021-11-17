@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "iA Quattro";
+  font-display: swap;
+  font-style: normal;
+  font-family: iA Quattro;
+  font-stretch: 25% 150%;
+  font-weight: 100 1000;
+  src: url(iAWriterQuattroV.ttf) format("truetype-variations");
+}
+
+@font-face {
+  font-family: "iA Quattro";
+  font-display: swap;
+  font-style: italic;
+  font-family: iA Quattro;
+  font-stretch: 25% 150%;
+  font-weight: 100 1000;
+  src: url(iAWriterQuattroV-Italic.ttf) format("truetype-variations");
+}
