@@ -1,0 +1,173 @@
+import ArticleLayout from "../components/ArticleLayout";
+import Meta from "../meta";
+
+export { getStaticProps } from '../usesStaticPropsHack'
+
+# /uses
+
+_Page last updated 2021-07-30 &mdash; [History](https://github.com/mikker/mikkelmalmberg-next/commits/master/pages/uses.mdx)_
+
+Seeing and reading about other people's setups is a guilty pleasure of mine. It's the sort of meta-work that can feel like a productive investment to find _juuust the right font_ when in reality the font doesn't matter at all &mdash; it's the words, dummy.
+
+Yet &mdash; it's interesting to see how others conduct their work and what tools they use.
+
+We spend so much time in front of our screens, we might as well make ourselves comfortable. And so, here are some of the things I use.
+
+## Work
+
+* I work from an office in our house in Aalborg, Denmark. I grew up here, was away for 10 years. Came back and bought a house after having kid no. 2. It's the perfect size town to grow up in.
+
+- My main machine is a [2019 Macbook Pro 16&quot;][mbp]. If I'm at my desk, and I most likely am, it is in clamshell mode, stuck in [a vertical stand][stand], connected to a [CalDigit TS3+ Thunderbolt hub][caldigit] and a [DisplayPort 1.4 switch][dpsw]. That means I just need to plug in two cables and everything is connected. I could save a cable by using the DisplayPort on the CalDigit, but then I'd have to live with macOS only using 60 of the 144Hz available. By the press of a button, the signal switches between my Mac and PC.
+
+- My monitor is an [LG 27&quot; UltraGear 27GN950-B][lg]. I wanted a monitor (and only 1) that had both a high refresh rate for FPS gaming and a high resolution for general use. I'm very satisfied with this one even though it's not "Retina"-level pixel density (meaning if you squint and make an effort you can tell individual pixels apart). It's good enough. The IPS panel has beautiful colors and it's amazing to game on 27 inches at 100+ fps.
+
+  Being a true _"gaming"_ monitor, it looks like something out of a spaceship. An absolutely horrendous looking stand and an RGB (unicorn vomit) carroussel on the back. So, to hide that a bit and because it looks nice, I've mounted it to my desk on a [Amazon Basics monitor arm][monitor-arm].
+
+## Desk
+
+- My desk is a [White IKEA Bekant][bekant]. It's a motorised standing desk and I do actually use it standing multiple times a week. It has a pretty neat basket of sorts for cable management underneath. I'm a bit tired of the white color though so I'm casually looking for something else.
+
+- I have recently splashed on a Herman Miller Aeron chair. I've tried them before at start-up offices and knew I liked them.
+
+- I've stuck an [Aputure MC RGB][aputure] to the back of my monitor. I've tried a few things for behind-the-monitor light and this one's the best solution so far. It can be really bright white by day and a toned down orange for late night gaming. And screaming pink for those other special occasions. I would've prefered something with HomeKit support.
+
+- The table only holds my two computers, the A/V gear and the peripherals. The switches, hubs and power bricks are all stuck underneath with two-sided tape. This removes the clutter but also makes it much easier to raise and lower the table as there's only 2 cables hanging from it, power and ethernet.
+
+  (I'll include some photos later)
+
+## Peripherals
+
+- When I'm at my desk I'm usually wearing my [Sony WH1000XM4/B][sony]s. When I'm gaming, making music (I miss making music) or editing video, I plug them into an [EVO 4][evo] audio interface. This is mostly to combat latency but it's also very handy to be able to have your own voice mixed into the audio when talking and having an actual dial to turn things up or down.
+
+- My main keyboard is the [ZSA Moonlander MARK I][moonlander] with blank rainbow keycaps and custom cables - [here it is on Reddit][moonred]. It's configured with [this closer-to-normie Mac configuration][keyconf].
+
+- I use an [Apple Magic Trackpad 2][trackpad].
+
+- When gaming I use a [HHKB Pro 2][hhkb] and a [wired matte black Glorious Model O- mouse][modelo] because I have small and delicate lady hands. I wish they made the smaller size in a wireless variant. I have an [XXL Glorious mousepad][mousepad] that covers both keyboard and mouse and it's wonderful.
+
+## Audio/Video
+
+- I've recently bought a used [Sony a6000][a6000] for use as a general camera that doubles as a webcam. I've used the built-in webcams and even a dedicated USB one and they've all been shit. A full-body camera like this is an enormous upgrade in quality. It's connected via HDMI and an [Elgato Cam Link 4K][camlink]. It's sitting on a cheap tripod behind my monitor but I'm investigating ways to mount it to my monitor arm.
+
+- I have a [Shure SM7B][sm7b] mic on a [RØDE PS1 arm][rodearm] connected to my audio interface. For day-to-day meetings I usually just use the mic in my bluetooth headphones so the SM7B is currently mostly used as the world's most overpowered gaming mic that I [whisper into][whisper] to not wake the family.
+
+## Gaming PC
+
+- My PC is custom built in the [Louqe Ghost S1 (mk. 3)][ghost] case, the _Ash_ colored variant with a _Copper_ top plate. It has a custom [spine][spine], [bottom plate][bottomplate] and [feet][feet].
+
+- Specs
+
+  - Motherboard: Gigabyte B450 AORUS PRO WiFi
+  - CPU: AMD Ryzen 5 3600X (6 cores)
+  - CPU fan: Noctua NH-L12 Ghost S1 ed.
+  - RAM: 16gb Corsair Vengeance LPX DDR4 3200
+  - PSU: Corsair SFX SF750 Platinum
+  - SSD: Crucial P1 3D NAND NVMe - 1TB
+  - GPU: GIGABYTE GeForce RTX 3060 Ti GAMING OC PRO (fans deshrouded and replaced w. 2x Noctua NF-A12x15)
+  - Case fan: Noctua NF-A12x25 bottom exhaust.
+
+- I have undervolted both the CPU and GPU for a about 10&deg;C temp drop with no visible loss of performance. It runs Warzone comfortably above 100fps, topping out at about 65&deg;C with only a single exhaust fan. I tried running it with two additional exhaust fans in the medium tophat but the gains were small and the Ghost just looks so much cooler without the tophats.
+
+## On my Mac
+
+- I have a completely empty Desktop. Sometimes it serves as a holding area for a file or two but most of the time it's competely empty.
+
+- I never use my Dock for launching apps. It too is mostly empty, holding only Finder, the apps that are currently running, a Downloads folder stack and the Trash. I have it on the bottom edge set to auto-hide.
+
+### Software
+
+- My favourite editor is [vim][] inside [tmux][] inside [iTerm2][] nightlies. I switched to vim over 10 years ago and have never looked back.
+- My colorscheme is a custom version of the [paramount][] theme. Every now and then I change up the colors which is easy because there's mainly just one accent color and the rest is grayscale-ish. I use [Iosevka][] which is just delightful. <del>This website uses it too.</del>
+- Safari is my browser. I like Firefox but nothing beats Safari's speed and OS integration. I'm a heavy user of Reading List for saving links for later and that only works in Safari. I hate using Chrome as it feels bloated and icky with all the _Google_ but I use it for my Elastic work email and calendar.
+- I use [HEY][] for email. It's nice to try something completely new. I use it in Safari and not the app wrapper so I can [mod it with Sprinkles][mailmod].
+- Apple Music for music that's not YouTube synthwave mixtapes. Yes, I am the only person using Apple Music but it's good now. Only thing I miss from Spotify is Discover Weekly.
+- [Things][] for todos which is mostly the same repeating list I run through each day.
+- A combination of [VimR][] with [Vimwiki][], [iA Writer][], [nvAlt][] and [Notion][] for personal notes. It's a mess and I'm never satisfied. Part of it is that I'm bad at keeping notes and part of it is not knowing what it is that I want to capture in those notes. But having good notes looks like a superpower so I keep struggling.
+- [Quicksilver][] for launching apps and scripts. [It's better than all the alternatives][better-qs].
+- [Hammerspoon][] for general shortcuts, window management presets and [more][hammerspoon-conf].
+- [Moves][] for mouse controlled window management (I made it!)
+- [Sprinkles][] to mod websites (I made it!)
+- [Pastebot][] for clipboard history.
+- [1password][] for password management.
+- [CleanShotX][] for screenshots.
+- [Battery Buddy][] because it's cute.
+- [Espanso][] for text expansion.
+- [Hand Mirror][] and [Webcam Settings][] for calls.
+- [Sketch][] for vector graphics.
+- [Acorn][] for raster graphics.
+- [Slack][] for chatting with co-workers, friends and generally not getting shit done.
+- Apple Photos for photos.
+- Time Machine and [BackBlaze][] for backups.
+
+## On my PC
+
+- Call of Duty Warzone and Apex Legends. Battle Royals are so much fun.
+- Discord for hectic battle communication and lame jokes late at night with friends.
+
+[mbp]: https://www.apple.com/macbook-pro-16/
+[stand]: https://satechi.net/products/universal-vertical-aluminum-laptop-stand?variant=44564560841
+[caldigit]: https://www.caldigit.com/ts3-plus/ "CalDigit TS3+"
+[dpsw]: https://store.level1techs.com/products/kvm-switch-2-port-dual-monitor-8k-model-mhkr7
+[lg]: https://www.lg.com/us/monitors/lg-27gn950-b-gaming-monitor
+[monitor-arm]: https://www.amazon.com/AmazonBasics-Single-Monitor-Stand-Adjustable/dp/B07DHK5DHN/ref=sr_1_8?dchild=1&keywords=basics+monitor+arm&qid=1620326547&sr=8-8
+[bekant]: https://www.ikea.com/dk/da/p/bekant-skrivebord-haeve-saenke-hvid-s69022537/
+[sony]: https://electronics.sony.com/audio/headphones/headband/p/wh1000xm4-b
+[evo]: https://evo.audio/products/evo-4/overview/
+[moonlander]: https://www.zsa.io/moonlander/
+[hhkb]: https://www.hhkeyboard.com/uk/products/pro2/
+[modelo]: https://www.pcgamingrace.com/products/glorious-model-o-minus-matte-black
+[mousepad]: https://www.pcgamingrace.com/products/glorious-xxl-gaming-mouse-pad
+[ghost]: https://www.louqe.com/ghost-s1/
+[spine]: https://meta-customs.de/rtx-3000-spine/
+[bottomplate]: https://meta-customs.de/bottomplate/
+[feet]: https://www.ebay.com/itm/Louqe-Ghost-S1-Feet-3D-printed-better-design-/133381727610
+[a6000]: https://www.sony.dk/electronics/kameraer-med-udskiftelige-objektiver/ilce-6000-body-kit
+[c920]: https://www.logitech.com/en-us/products/webcams/c920-pro-hd-webcam.960-000764.html
+[camlink]: https://www.elgato.com/en/cam-link-4k
+[sm7b]: https://www.shure.com/en-US/products/microphones/sm7b
+[markus]: https://www.ikea.com/us/en/p/markus-office-chair-vissle-dark-gray-90289172/
+[wheels]: https://twitter.com/mikker/status/1305769986854617088
+[trackpad]: https://www.apple.com/shop/product/MJ2R2LL/A/magic-trackpad-2-silver
+[keyconf]: https://configure.zsa.io/moonlander/layouts/xbNqp/latest/0
+[aputure]: https://www.aputure.com/products/mc/
+[rodearm]: https://www.rode.com/accessories/stands/psa1
+[vim]: https://www.vim.org
+[tmux]: https://tmux.sourceforge.io
+[iterm2]: https://iterm2.com
+[paramount]: https://github.com/mikker/vim-colors-paramount
+[iosevka]: https://typeof.net/Iosevka/
+[hey]: https://hey.com
+[mailmod]: https://twitter.com/mikker/status/1385570609942470658
+[things]: https://culturedcode.com/things/
+[vimr]: https://github.com/qvacua/vimr
+[vimwiki]: https://github.com/vimwiki/vimwiki
+[ia writer]: https://ia.net/writer
+[notion]: http://notion.so
+[quicksilver]: https://qsapp.com
+[hammerspoon]: http://www.hammerspoon.org
+[moves]: https://getmoves.app
+[sprinkles]: https://getsprinkles.app
+[pastebot]: https://tapbots.com/pastebot/
+[1password]: https://1password.com
+[cleanshotx]: https://cleanshot.com
+[battery buddy]: https://batterybuddy.app
+[espanso]: https://espanso.org
+[hand mirror]: https://handmirror.app
+[webcam settings]: https://apps.apple.com/us/app/webcam-settings/id533696630?mt=12
+[sketch]: https://www.sketch.com
+[acorn]: https://flyingmeat.com/acorn/
+[backblaze]: https://www.backblaze.com
+[hammerspoon-conf]: https://github.com/mikker/dotfiles/blob/master/hammerspoon/hammerspoon.symlink/init.lua
+[slack]: https://slack.com
+[moonred]: https://www.reddit.com/r/MechanicalKeyboards/comments/mlby8p/my_trusty_zsa_moonlander_mk_i_with_rainbow_blanks/
+[whisper]: https://www.youtube.com/channel/UCgwX6SVkOsJajetxo0MUrAQ/videos
+[nvAlt]: https://brettterpstra.com/projects/nvalt/
+[better-qs]: https://twitter.com/mikker/status/1384493871250485251
+
+export default ({ children, ogImage }) => (
+  <ArticleLayout title="/uses" active='writing'>
+  <Meta title="/uses" description="The stuff I use to do the things that I do" image={ogImage} />
+  {children}
+  </ArticleLayout>
+);
+
