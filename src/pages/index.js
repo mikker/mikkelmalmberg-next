@@ -108,7 +108,7 @@ const work = [
   },
   {
     title: "Brainbow",
-    role: "Self-emplyed",
+    role: "Owner",
     duration: "2007–____",
     link: "https://brainbow.studio",
   },
@@ -166,6 +166,7 @@ const elsewhere = [
   { title: "twitter.com/mikker", link: "https://twitter.com/mikker" },
   { title: "github.com/mikker", link: "https://github.com/mikker" },
   { title: "mikker.eth", link: "https://mikker.eth.link" },
+  { title: "mikker.tez", link: "https://mikker.tez.page" },
   { title: "mikkel@brnbw.com", link: "mailto:mikkel@brnbw.com?subject=I'm%20your%20biggest%20fan" },
 ]
 
