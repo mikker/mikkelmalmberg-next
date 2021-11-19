@@ -35,23 +35,14 @@ export default function AboutPage() {
             <A href="/writing">COMPUTERS</A>, shoot the breeze on{" "}
             <A href="https://twitter.com/mikker">Twitter</A>, juggle three kids.
           </p>
-          {/* <p> */}
-          {/*   I co-host <A href="http://kortsluttet.dk/">Kortsluttet</A>, a weekly */}
-          {/*   tech show on Danish P1 radio, write a well-liked, too-far-between */}
-          {/*   Danish newsletter called <A href="/writing">COMPUTERS</A>. */}
-          {/* </p> */}
         </article>
       </Container>
-
-      {/* <Boxes /> */}
 
       <div className="h-8 md:h-24"></div>
 
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <h2 className="col-span-2 text-tertiary md:text-right">
-            Work
-          </h2>
+          <h2 className="col-span-2 text-tertiary md:text-right">Work</h2>
 
           <div className="col-span-10 flex flex-col space-y-3 overflow-auto">
             {work.map((position) => (
@@ -75,9 +66,7 @@ export default function AboutPage() {
 
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-          <h2 className="col-span-2 text-tertiary md:text-right">
-            Find me
-          </h2>
+          <h2 className="col-span-2 text-tertiary md:text-right">Find me</h2>
 
           <div className="col-span-10 flex flex-col space-y-3 overflow-auto">
             {elsewhere.map((destination) => (
@@ -167,61 +156,8 @@ const elsewhere = [
   { title: "github.com/mikker", link: "https://github.com/mikker" },
   { title: "mikker.eth", link: "https://mikker.eth.link" },
   { title: "mikker.tez", link: "https://mikker.tez.page" },
-  { title: "mikkel@brnbw.com", link: "mailto:mikkel@brnbw.com?subject=I'm%20your%20biggest%20fan" },
-]
-
-const Boxes = () => {
-  const [boxOnTop, setBoxOnTop] = useState(2);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const next = boxOnTop + 1;
-      setBoxOnTop(next === 3 ? 0 : next);
-    }, 2500);
-
-    return () => {
-      clearInterval(interval);
-    };
-  });
-
-  const cls = "absolute w-full max-w-screen-sm max-w-xl";
-
-  return (
-    <div className="relative">
-      <div
-        className={cn(
-          cls,
-          "right-0 -top-2 md:-top-20 bg-red-500",
-          boxOnTop === 0 ? "z-20" : "z-10"
-        )}
-      >
-        <div className="aspect-w-1 aspect-h-1">
-          <img src={"/avatar.jpg"} className="w-full block" />
-        </div>
-      </div>
-      <div
-        className={cn(
-          cls,
-          "right-2 md:right-20 bg-yellow-300",
-          boxOnTop === 1 ? "z-20" : "z-10"
-        )}
-      >
-        <div className="aspect-w-1 aspect-h-1">
-          <img src={"/crane.svg"} className="w-full block" />
-        </div>
-      </div>
-      <div
-        className={cn(
-          cls,
-          "right-4 md:right-40 top-2 md:top-20 bg-blue-600",
-          boxOnTop === 2 ? "z-20" : "z-10"
-        )}
-      >
-        <div className="aspect-w-1 aspect-h-1">
-          <div>{boxOnTop}</div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
+  {
+    title: "mikkel@brnbw.com",
+    link: "mailto:mikkel@brnbw.com?subject=I'm%20your%20biggest%20fan",
+  },
+];
