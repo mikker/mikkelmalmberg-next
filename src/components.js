@@ -1,4 +1,4 @@
-import cn from 'classnames'
+import cn from "classnames";
 
 export const Container = ({ className, ...props }) => (
   <div className={cn("max-w-6xl mx-auto relative p-5", className)} {...props} />

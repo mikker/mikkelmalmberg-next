@@ -9,7 +9,11 @@ import Meta, { bannerbearImage } from "../../meta";
 export default function IssuePage({ issue, ogImage }) {
   return (
     <Layout active="writing" title={issue.title}>
-      <Meta title={issue.title} description='COMPUTERS er et nyhedsbrev af Mikkel Malmberg' image={ogImage} />
+      <Meta
+        title={issue.title}
+        description="COMPUTERS er et nyhedsbrev af Mikkel Malmberg"
+        image={ogImage}
+      />
 
       <div className="m-3 lg:mx-auto lg:max-w-2xl xl:max-w-3xl ">
         <p className="mb-3 lg:mb-10">

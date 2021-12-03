@@ -1,7 +1,7 @@
 import ArticleLayout from "../components/ArticleLayout";
 import Meta from "../meta";
 
-export { getStaticProps } from '../usesStaticPropsHack'
+export { getStaticProps } from "../usesStaticPropsHack";
 
 # /uses
 
@@ -15,11 +15,11 @@ We spend so much time in front of our screens, we might as well make ourselves c
 
 ## Work
 
-* I work from an office in our house in Aalborg, Denmark. I grew up here, was away for 10 years. Came back and bought a house after having kid no. 2. It's the perfect size town to grow up in.
+- I work from an office in our house in Aalborg, Denmark. I grew up here, was away for 10 years. Came back and bought a house after having kid no. 2. It's the perfect size town to grow up in.
 
-- My main machine is a [2019 Macbook Pro 16&quot;][mbp]. If I'm at my desk, and I most likely am, it is in clamshell mode, stuck in [a vertical stand][stand], connected to a [CalDigit TS3+ Thunderbolt hub][caldigit] and a [DisplayPort 1.4 switch][dpsw]. That means I just need to plug in two cables and everything is connected. I could save a cable by using the DisplayPort on the CalDigit, but then I'd have to live with macOS only using 60 of the 144Hz available. By the press of a button, the signal switches between my Mac and PC.
+* My main machine is a [2019 Macbook Pro 16&quot;][mbp]. If I'm at my desk, and I most likely am, it is in clamshell mode, stuck in [a vertical stand][stand], connected to a [CalDigit TS3+ Thunderbolt hub][caldigit] and a [DisplayPort 1.4 switch][dpsw]. That means I just need to plug in two cables and everything is connected. I could save a cable by using the DisplayPort on the CalDigit, but then I'd have to live with macOS only using 60 of the 144Hz available. By the press of a button, the signal switches between my Mac and PC.
 
-- My monitor is an [LG 27&quot; UltraGear 27GN950-B][lg]. I wanted a monitor (and only 1) that had both a high refresh rate for FPS gaming and a high resolution for general use. I'm very satisfied with this one even though it's not "Retina"-level pixel density (meaning if you squint and make an effort you can tell individual pixels apart). It's good enough. The IPS panel has beautiful colors and it's amazing to game on 27 inches at 100+ fps.
+* My monitor is an [LG 27&quot; UltraGear 27GN950-B][lg]. I wanted a monitor (and only 1) that had both a high refresh rate for FPS gaming and a high resolution for general use. I'm very satisfied with this one even though it's not "Retina"-level pixel density (meaning if you squint and make an effort you can tell individual pixels apart). It's good enough. The IPS panel has beautiful colors and it's amazing to game on 27 inches at 100+ fps.
 
   Being a true _"gaming"_ monitor, it looks like something out of a spaceship. An absolutely horrendous looking stand and an RGB (unicorn vomit) carroussel on the back. So, to hide that a bit and because it looks nice, I've mounted it to my desk on a [Amazon Basics monitor arm][monitor-arm].
 
@@ -161,13 +161,16 @@ We spend so much time in front of our screens, we might as well make ourselves c
 [slack]: https://slack.com
 [moonred]: https://www.reddit.com/r/MechanicalKeyboards/comments/mlby8p/my_trusty_zsa_moonlander_mk_i_with_rainbow_blanks/
 [whisper]: https://www.youtube.com/channel/UCgwX6SVkOsJajetxo0MUrAQ/videos
-[nvAlt]: https://brettterpstra.com/projects/nvalt/
+[nvalt]: https://brettterpstra.com/projects/nvalt/
 [better-qs]: https://twitter.com/mikker/status/1384493871250485251
 
 export default ({ children, ogImage }) => (
-  <ArticleLayout title="/uses" active='writing'>
-  <Meta title="/uses" description="The stuff I use to do the things that I do" image={ogImage} />
-  {children}
+  <ArticleLayout title="/uses" active="writing">
+    <Meta
+      title="/uses"
+      description="The stuff I use to do the things that I do"
+      image={ogImage}
+    />
+    {children}
   </ArticleLayout>
 );
-

@@ -5,7 +5,7 @@ import notion, { databaseId } from "../notion";
 import { post } from "../api";
 import { parseISO, formatDistance } from "date-fns";
 import { sync as markdown } from "../markdown";
-import { Container, H1 } from '../components'
+import { Container, H1 } from "../components";
 
 export default function AmaPage({ questions }) {
   const [body, setBody] = useState("");
