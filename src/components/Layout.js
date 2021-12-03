@@ -95,7 +95,7 @@ export default function Layout({ active, title, children }) {
     <main>
       {mounted && (
         <div className="fixed z-10 w-full min-h-screen">
-          <Snowfall />
+          <Snowfall color={'#ccc'} />
         </div>
       )}
 
