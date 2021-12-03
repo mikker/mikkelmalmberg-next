@@ -13,11 +13,11 @@ export default function AboutPage() {
       <div className="h-5 md:mt-10" />
 
       <Container>
-        <div className="md:w-full max-w-sm w-40 md:absolute -top-10 -right-20 z-0">
+        <div className="z-0 w-40 max-w-sm md:w-full md:absolute -top-10 -right-20">
           <Image src={require("../../public/avatar.jpg")} />
         </div>
 
-        <article className="dark:text-white space-y-6 md:space-y-14 mt-5 mx-auto font-cahuenga md:text-5xl lg:text-7xl text-xl leading-normal md:leading-tight lg:leading-tight">
+        <article className="mx-auto mt-5 text-xl leading-normal dark:text-white space-y-6 md:space-y-14 font-cahuenga md:text-5xl lg:text-7xl md:leading-tight lg:leading-tight">
           <p className="relative z-30">
             Hi, I'm <em>Mikkel Malmberg</em>. A multidisciplinary artist and
             independent builder.{" "}
@@ -44,16 +44,17 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           <h2 className="col-span-2 text-tertiary md:text-right">Work</h2>
 
-          <div className="col-span-10 flex flex-col space-y-3 overflow-auto">
-            {work.map((position) => (
+          <div className="flex flex-col overflow-auto col-span-10 space-y-3">
+            {work.map((position, i) => (
               <a
                 href={position.link}
-                className="md:flex items-center md:space-x-4 group"
+                className="items-center md:flex md:space-x-4 group"
+                key={i}
               >
                 <div className="flex-none group-hover:link ">
                   {position.title}
                 </div>
-                <div className="hidden md:block flex-shrink w-full border-t-2 border-gray-200 dark:border-gray-800"></div>
+                <div className="flex-shrink hidden w-full border-t-2 border-gray-200 md:block dark:border-gray-800"></div>
                 <div className="flex-none text-secondary">{position.role}</div>
                 <div className="flex-none text-tertiary lining-nums tabular-nums">
                   {position.duration}
@@ -68,11 +69,12 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           <h2 className="col-span-2 text-tertiary md:text-right">Find me</h2>
 
-          <div className="col-span-10 flex flex-col space-y-3 overflow-auto">
-            {elsewhere.map((destination) => (
+          <div className="flex flex-col overflow-auto col-span-10 space-y-3">
+            {elsewhere.map((destination, i) => (
               <a
                 href={destination.link}
-                className="md:flex items-center md:space-x-4 group"
+                key={i}
+                className="items-center md:flex md:space-x-4 group"
               >
                 <div className="flex-none group-hover:link ">
                   {destination.title}

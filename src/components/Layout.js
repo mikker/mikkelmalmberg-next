@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import { Twitter, GitHub, Instagram, Menu, X } from "react-feather";
+import { Menu, X } from "react-feather";
 import cn from "classnames";
-import { Container } from '../components'
+import { Container } from "../components";
+import Snowfall from "react-snowfall";
 
 const MobileNav = ({ active, ...props }) => {
   const [open, setOpen] = useState(false);
@@ -87,14 +87,24 @@ const DesktopNav = ({ active, className }) => {
 };
 
 export default function Layout({ active, title, children }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, [mounted]);
   return (
     <main>
+      {mounted && (
+        <div className="fixed z-10 w-full min-h-screen">
+          <Snowfall />
+        </div>
+      )}
+
       <Head>
         <title>{title}</title>
       </Head>
 
       <nav className="fixed top-0 left-0 right-0 z-50">
-        <Container className='py-3'>
+        <Container className="py-3">
           <MobileNav active={active} className="md:hidden" />
           <DesktopNav active={active} className="hidden md:flex" />
         </Container>
