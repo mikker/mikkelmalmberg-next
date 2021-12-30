@@ -92,16 +92,22 @@ export default function AboutPage() {
 
 const work = [
   {
-    title: "Kortsluttet",
-    role: "Radio Host, P1",
-    duration: "2020-____",
-    link: "https://www.dr.dk/lyd/p1/kortsluttet",
-  },
-  {
     title: "Brainbow",
     role: "Owner",
     duration: "2007–____",
     link: "https://brainbow.studio",
+  },
+  {
+    title: "Random Character Collective",
+    role: "dev",
+    duration: "2021–____",
+    link: "https://twitter.com/rndmcharacters",
+  },
+  {
+    title: "Kortsluttet",
+    role: "Radio Host, P1",
+    duration: "2020-2021",
+    link: "https://www.dr.dk/lyd/p1/kortsluttet",
   },
   {
     title: "Elastic",
