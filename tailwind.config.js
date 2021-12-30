@@ -1,8 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  mode: "jit",
-  purge: ["./src/**/*.js"],
+  content: ["./src/**/*.js"],
   darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {
@@ -15,7 +14,7 @@ module.exports = {
         0 0 0 4px rgba(45, 83, 212, 0.3)`,
       },
       colors: {
-        gray: colors.trueGray,
+        gray: colors.neutral,
         sunset: {
           50: "#fcfbf8",
           100: "#faefe2",
