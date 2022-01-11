@@ -1,4 +1,4 @@
-import notion, { databaseId } from "../../../notion";
+import notion from "../../../notion";
 
 export default async function handle(req, res) {
   const { id } = req.body;

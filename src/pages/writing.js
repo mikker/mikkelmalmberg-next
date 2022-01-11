@@ -97,7 +97,7 @@ export default function WritingPage({ issuesByYear, postsByDate }) {
   );
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps() {
   const feeds = await import("../generateFeeds");
   await feeds.default();
 

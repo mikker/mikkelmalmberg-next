@@ -1,11 +1,6 @@
-import { useState, useEffect } from "react";
-import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
-import { Twitter, GitHub, Instagram, Menu, X } from "react-feather";
 import Layout from "../components/Layout";
 import { Container, A } from "../components";
-import cn from "classnames";
 
 export default function AboutPage() {
   return (

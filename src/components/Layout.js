@@ -5,7 +5,6 @@ import Head from "next/head";
 import { Menu, X } from "react-feather";
 import cn from "classnames";
 import { Container } from "../components";
-import Snowfall from "react-snowfall";
 
 const MobileNav = ({ active, ...props }) => {
   const [open, setOpen] = useState(false);
@@ -39,10 +38,6 @@ const MobileNav = ({ active, ...props }) => {
 
           <Link href="/ama">
             <a className={active === "ama" ? activeCls : normieCls}>AMA</a>
-          </Link>
-
-          <Link href="/treehouse">
-            <a className={active === "treehouse" ? activeCls : normieCls}>🌳</a>
           </Link>
         </div>
       )}
@@ -78,10 +73,6 @@ const DesktopNav = ({ active, className }) => {
       <Link href="/ama">
         <a className={active === "ama" ? activeCls : normieCls}>AMA</a>
       </Link>
-
-      <Link href="/treehouse">
-        <a className={active === "treehouse" ? activeCls : normieCls}>🌳</a>
-      </Link>
     </div>
   );
 };
@@ -93,12 +84,6 @@ export default function Layout({ active, title, children }) {
   }, [mounted]);
   return (
     <main>
-      {mounted && (
-        <div className="fixed z-10 w-full min-h-screen opacity-50 pointer-events-none dark:opacity-20">
-          <Snowfall color={'#ccc'} />
-        </div>
-      )}
-
       <Head>
         <title>{title}</title>
       </Head>

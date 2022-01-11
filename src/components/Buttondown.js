@@ -12,7 +12,7 @@ const sample = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 export const generateRandomEmail = () => sample(stupidEmails);
 
-const Buttondown = ({ list, buttonTitle, ...props }) => {
+const Buttondown = ({ list, buttonTitle }) => {
   buttonTitle = buttonTitle || "Tilmeld";
 
   const [placeholder, setPlaceholder] = useState("");
@@ -40,7 +40,7 @@ const Buttondown = ({ list, buttonTitle, ...props }) => {
             defaultValue=""
             name="email"
             id="bd-email"
-            className="border-white dark:border-black rounded-none rounded-t-lg sm:rounded-t-none sm:rounded-l-lg input w-100"
+            className="border-white rounded-none rounded-t-lg dark:border-black sm:rounded-t-none sm:rounded-l-lg input w-100"
             placeholder={placeholder}
           />
         </div>
@@ -49,7 +49,7 @@ const Buttondown = ({ list, buttonTitle, ...props }) => {
           type="submit"
           value={buttonTitle}
           name="subscribe"
-          className="bg-black rounded-none rounded-b-lg sm:rounded-b-none sm:rounded-r-lg w-full sm:w-auto justify-center text-gold-500 btn"
+          className="justify-center w-full bg-black rounded-none rounded-b-lg sm:rounded-b-none sm:rounded-r-lg sm:w-auto text-gold-500 btn"
         />
       </div>
     </form>

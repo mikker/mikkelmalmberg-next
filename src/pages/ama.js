@@ -1,10 +1,8 @@
 import Layout from "../components/Layout";
 import { useState } from "react";
-import Link from "next/link";
 import notion, { databaseId } from "../notion";
 import { post } from "../api";
 import { parseISO, formatDistance } from "date-fns";
-import { sync as markdown } from "../markdown";
 import { Container, H1 } from "../components";
 
 export default function AmaPage({ questions }) {
