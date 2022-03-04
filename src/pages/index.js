@@ -169,16 +169,16 @@ const media = [
     link: "https://www.dr.dk/lyd/p1/kortsluttet",
   },
   {
-    title: "Fup i Farvandet",
-    role: "Podcast host",
-    duration: "2011-2018",
-    link: "https://fupifarvandet.dk",
-  },
-  {
     title: "Mikkel og et Menneske",
     role: "Podcast host",
     duration: "2012-2012",
     link: "http://moem.dk",
+  },
+  {
+    title: "Fup i Farvandet",
+    role: "Podcast host",
+    duration: "2011-2018",
+    link: "https://fupifarvandet.dk",
   },
   {
     title: "Stand-up comedian",
