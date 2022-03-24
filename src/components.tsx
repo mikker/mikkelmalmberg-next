@@ -1,6 +1,7 @@
 import cn from "classnames";
+import { FC } from 'react'
 
-export const Container = ({ className, ...props }) => (
+export const Container: FC<React.HTMLAttributes<HTMLDivElement>> = ({ className, ...props }) => (
   <div className={cn("max-w-6xl mx-auto relative p-5", className)} {...props} />
 );
 

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, FC } from "react";
 import { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
@@ -6,7 +6,7 @@ import { Menu, X } from "react-feather";
 import cn from "classnames";
 import { Container } from "../components";
 
-const MobileNav = ({ active, ...props }) => {
+const MobileNav: FC<React.HTMLAttributes<HTMLDivElement> & { active?: string }> = ({ active, ...props }) => {
   const [open, setOpen] = useState(false);
   const activeCls =
     "btn font-bold text-xl text-white dark:text-black bg-gradient-to-r dark:from-sunset-300 dark:to-gold-500 from-blue-700 to-purple-500";
@@ -45,7 +45,7 @@ const MobileNav = ({ active, ...props }) => {
   );
 };
 
-const DesktopNav = ({ active, className }) => {
+const DesktopNav: FC<React.HTMLAttributes<HTMLDivElement> & { active?: string }> = ({ active, className }) => {
   const activeCls = "btn px-5 dark:text-white";
   const normieCls =
     "btn font-semibold px-5 inline bg-gradient-to-r text-transparent bg-clip-text  dark:from-sunset-300 dark:to-gold-500 from-blue-400 to-purple-500";
@@ -77,13 +77,19 @@ const DesktopNav = ({ active, className }) => {
   );
 };
 
-export default function Layout({ active, title, children }) {
+type LayoutProps = {
+  active?: string;
+  title?: string;
+}
+
+const Layout: FC<React.HTMLAttributes<HTMLDivElement> & LayoutProps> = ({ active, title, children, ...props }) => {
   const [mounted, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);
   }, [mounted]);
+
   return (
-    <main>
+    <main {...props}>
       <Head>
         <title>{title}</title>
       </Head>
@@ -107,3 +113,6 @@ export default function Layout({ active, title, children }) {
     </main>
   );
 }
+
+export default Layout;
+

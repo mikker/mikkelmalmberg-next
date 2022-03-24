@@ -1,8 +1,9 @@
+import type { NextPage } from "next";
 import Image from "next/image";
 import Layout from "../components/Layout";
 import { Container, A } from "../components";
 
-export default function AboutPage() {
+const AboutPage: NextPage = () => {
   return (
     <Layout active="about" title="Hello, I'm Mikkel Malmberg">
       <div className="h-5 md:mt-10" />
@@ -198,3 +199,5 @@ const elsewhere = [
     link: "mailto:mikkel@brnbw.com?subject=I'm%20your%20biggest%20fan",
   },
 ];
+
+export default AboutPage;
