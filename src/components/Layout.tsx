@@ -100,7 +100,7 @@ const Layout: FC<React.HTMLAttributes<HTMLDivElement> & LayoutProps> = ({ active
           <DesktopNav active={active} className="hidden md:flex" />
         </Container>
         <div
-          className="absolute top-0 left-0 w-full h-full bg-white dark:bg-black backdrop-blur-20 bg-opacity-10 dark:bg-opacity-10"
+          className="absolute top-0 left-0 w-full h-full bg-white/80 dark:bg-black/80 backdrop-blur"
           style={{ zIndex: "-1" }}
         />
       </nav>
