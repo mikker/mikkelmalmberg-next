@@ -180,6 +180,7 @@ const Token: FC<React.HTMLAttributes<HTMLElement> & TokenProps> = ({
             autoPlay
             muted
             controls
+            playsInline
             loop
             src={token.src}
             {...restAssetProps}
