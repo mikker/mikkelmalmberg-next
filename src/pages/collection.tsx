@@ -179,7 +179,6 @@ const Token: FC<React.HTMLAttributes<HTMLElement> & TokenProps> = ({
             className={assetCls}
             autoPlay
             muted
-            controls
             playsInline
             loop
             src={token.src}
