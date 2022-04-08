@@ -143,6 +143,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
+"@headlessui/react@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.5.0.tgz#483b44ba2c8b8d4391e1d2c863898d7dd0cc0296"
+  integrity sha512-aaRnYxBb3MU2FNJf3Ut9RMTUqqU3as0aI1lQhgo2n9Fa67wRu14iOGqx93xB+uMNVfNwZ5B3y/Ndm7qZGuFeMQ==
+
 "@mdx-js/loader@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-2.1.1.tgz#98f0f2d8fc7f6b2f2c51ea2f4185e9c1ebcb187a"
@@ -666,6 +671,11 @@ comma-separated-tokens@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/comma-separated-tokens/-/comma-separated-tokens-2.0.2.tgz#d4c25abb679b7751c880be623c1179780fe1dd98"
   integrity sha512-G5yTt3KQN4Yn7Yk4ed73hlZ1evrFKXeUW3086p3PRFNp7m2vIjI6Pg+Kgb+oyzhd9F2qdcoj67+y3SdxL5XWsg==
+
+constate@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/constate/-/constate-3.3.0.tgz#3961f552ab1bec2a9d0d56c9bc1d6bcde407357b"
+  integrity sha512-mRjWH2J4D3Rq6XAuEhoGUkBWrBLUNbiYr/Rp4M/MEEp+LN0vctQS3EAw/6bxlnDy59T+UrAEU9Tg136Dfp6ytg==
 
 cosmiconfig@^7.0.1:
   version "7.0.1"

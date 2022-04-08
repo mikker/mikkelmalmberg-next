@@ -70,6 +70,10 @@ const DesktopNav: FC<React.HTMLAttributes<HTMLDivElement> & { active?: string }>
         <a className={active === "writing" ? activeCls : normieCls}>Writing</a>
       </Link>
 
+      <Link href="/collection">
+        <a className={active === "collection" ? activeCls : normieCls}>Collection</a>
+      </Link>
+
       <Link href="/ama">
         <a className={active === "ama" ? activeCls : normieCls}>AMA</a>
       </Link>

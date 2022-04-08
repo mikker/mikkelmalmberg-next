@@ -59,15 +59,6 @@
       Consolas, Liberation Mono, Courier New, monospace;
   }
 
-  @supports (
-    (-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))
-  ) {
-    .backdrop-blur-20 {
-      -webkit-backdrop-filter: blur(20px);
-      backdrop-filter: blur(20px);
-    }
-  }
-
   .debug,
   .debug * {
     outline: 1px solid rgba(255, 0, 0, 0.2) !important;
@@ -94,13 +85,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply min-h-screen text-base text-primary bg-white lg:text-xl xl:text-xl dark:bg-gray-900 font-ia-quattro;
-}
+@layer base {
+  body {
+    @apply min-h-screen text-base text-primary bg-white lg:text-xl xl:text-xl dark:bg-gray-900 font-ia-quattro;
+  }
 
-code {
-  color: currentColor;
-  font-size: 80%;
+  code {
+    color: currentColor;
+    font-size: 80%;
+  }
 }
 
 :root {

@@ -12,5 +12,5 @@ export const H1 = ({ ...props }) => (
 );
 
 export const H2 = ({ ...props }) => (
-  <h2 className="font-cahuenga text-3xl mb-4" {...props} />
+  <h2 className="font-cahuenga text-2xl md:text-3xl mb-2 md:mb-4" {...props} />
 );
