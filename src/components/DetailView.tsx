@@ -1,7 +1,7 @@
 import { Dialog } from "@headlessui/react";
 import constate from "constate";
 import { useState } from "react";
-import type { Token } from '../pages/collection'
+import type { Token } from '../collection'
 
 function useDetailView() {
   const [token, setToken] = useState<Token | null>(null);
