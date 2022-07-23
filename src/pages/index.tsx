@@ -9,8 +9,8 @@ const AboutPage: NextPage = () => {
       <div className="h-5 md:mt-10" />
 
       <Container>
-        <div className="z-0 w-40 max-w-sm md:w-full md:absolute -top-10 -right-20">
-          <Image src={require("../../public/avatar.jpg")} />
+        <div className="z-0 w-32 max-w-xs md:w-full md:absolute -top-10 right-0 rounded-full overflow-hidden">
+          <Image src={require("../../public/pfp.gif")} layout="responsive" />
         </div>
 
         <article className="mx-auto mt-5 text-xl leading-normal dark:text-white space-y-6 md:space-y-14 font-cahuenga md:text-5xl lg:text-7xl md:leading-tight lg:leading-tight">
@@ -109,7 +109,7 @@ const AboutPage: NextPage = () => {
       <div className="h-12"></div>
     </Layout>
   );
-}
+};
 
 const work = [
   {
@@ -187,7 +187,7 @@ const media = [
     duration: "2009-2018",
     link: "https://www.youtube.com/watch?v=TgzjUb-2blI",
   },
-]
+];
 
 const elsewhere = [
   { title: "twitter.com/mikker", link: "https://twitter.com/mikker" },
