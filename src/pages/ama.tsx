@@ -1,15 +1,17 @@
 import Layout from "../components/Layout";
 import { useState } from "react";
-import notion, { databaseId } from "../notion";
+import { prisma } from "../prisma";
 import { post } from "../api";
-import { parseISO, formatDistance } from "date-fns";
+import { formatDistance, parseISO } from "date-fns";
 import { Container, H1 } from "../components";
+import { Answer, Question } from "@prisma/client";
+import { sync as markdown } from "../markdown";
 
-export default function AmaPage({ questions }) {
+export default function AmaPage({ questions }: { questions: Question[] }) {
   const [body, setBody] = useState("");
   const [didSubmit, setDidSubmit] = useState(false);
 
-  const onSubmit = async (event) => {
+  const onSubmit = async (event: any) => {
     event.preventDefault();
 
     let result;
@@ -65,7 +67,7 @@ export default function AmaPage({ questions }) {
         <div className="h-6 lg:h-8"></div>
 
         <div className="text-lg leading-relaxed nested-links max-w-prose">
-          {questions.results.map((question) => (
+          {questions.map((question: any) => (
             <div key={question.id}>
               <Question question={question} />
               <div className="mb-8 lg:mb-12" />
@@ -78,46 +80,37 @@ export default function AmaPage({ questions }) {
 }
 
 export const getStaticProps = async () => {
-  const questions = await notion.databases.query({
-    database_id: databaseId,
-    filter: {
-      property: "published",
-      checkbox: { equals: true },
-    },
-    sorts: [
-      {
-        property: "answeredAt",
-        direction: "descending",
-      },
-      {
-        property: "updatedAt",
-        direction: "descending",
-      },
-    ],
+  const questions = await prisma.question.findMany({
+    where: { published: true },
+    orderBy: { answeredAt: "desc" },
+    include: { answers: {} },
   });
 
   return {
-    props: { questions },
+    props: { questions: JSON.parse(JSON.stringify(questions)) },
     revalidate: 10, // secs
   };
 };
 
-const Question = ({ question }) => {
-  const [upvotes, setUpvotes] = useState(question.properties.upvotes.number);
-  const hash = `question-${question.id}`;
-  const date =
-    question.properties.answeredAt.date.start ||
-    question.properties.updatedAt.last_edited_time;
+const Question = ({
+  question: { id, body, answers, upvotes: initialUpvotes, answeredAt },
+}: {
+  question: Question & { answers: Answer[] };
+}) => {
+  const [upvotes, setUpvotes] = useState(initialUpvotes);
+  const hash = `question-${id}`;
 
   return (
     <>
       <dt className="mb-2">
-        <a className="font-bold" href={`#${hash}`} name={hash}>
-          Q: {question.properties.question.title[0].plain_text}
+        <a className="font-bold" href={`#${hash}`} id={hash}>
+          Q: {body}
         </a>
       </dt>
       <dd className="prose-lg">
-        <Answer block={question.properties.answer} />
+        {answers.map((answer) => (
+          <Answer key={answer.id.toString()} answer={answer} />
+        ))}
 
         <p className="mt-2 text-gray-500">
           <button
@@ -126,52 +119,35 @@ const Question = ({ question }) => {
             }`}
             onClick={() => {
               setUpvotes(upvotes + 1);
-              upvote(question.id).then(setUpvotes);
+              upvote(id).then(setUpvotes);
             }}
           >
-            &hearts;{upvotes}
+            &hearts;&nbsp;{upvotes}
           </button>
-          &nbsp;&middot;&nbsp; {formatDistance(parseISO(date), new Date())} ago
+          &nbsp;&middot;&nbsp;{" "}
+          {formatDistance(
+            parseISO(answeredAt as unknown as string),
+            new Date()
+          )}{" "}
+          ago
         </p>
       </dd>
     </>
   );
 };
 
-const Answer = ({ block }) => {
-  switch (block.type) {
-    case "rich_text":
-      return <RichText block={block} />;
-    default:
-      return <div />;
-  }
-};
+const Answer = ({ answer }: { answer?: Answer }) => {
+  if (!answer) return null;
 
-const RichText = ({ block }) => {
   return (
-    <div>
-      {block.rich_text.map((token, i) => {
-        let text = token.plain_text;
-        if (text.match(/\n\n/))
-          text = (
-            <span
-              dangerouslySetInnerHTML={{
-                __html: text.replace("\n\n", "<br><br>"),
-              }}
-            />
-          );
-        if (token.href) text = <a href={token.href}>{text}</a>;
-        if (token.annotations.bold) text = <strong>{text}</strong>;
-        if (token.annotations.italic) text = <em>{text}</em>;
-        if (token.annotations.strikethrough) text = <del>{text}</del>;
-        if (token.annotations.underline) text = <u>{text}</u>;
-        return <span key={i}>{text}</span>;
-      })}
-    </div>
+    <div
+      className="text-gray-700 dark:text-gray-200"
+      dangerouslySetInnerHTML={{ __html: markdown(answer.body) }}
+    />
   );
 };
 
-const upvote = async (id) => {
+const upvote = async (id: number) => {
   let result;
 
   try {
